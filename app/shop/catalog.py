@@ -138,6 +138,7 @@ def all_brands() -> list[str]:
 
 @lru_cache(maxsize=1)
 def price_bounds() -> tuple[int, int]:
+    """Cheapest and dearest price in the catalog, used to seed the price filter."""
     prices = [p["price"] for p in products()]
     return (min(prices), max(prices)) if prices else (0, 0)
 
@@ -146,13 +147,6 @@ def flash_products(limit: int = 12) -> list[dict]:
     """Flash-sale items, deepest discount first."""
     pool = [p for p in products() if p.get("flash")]
     pool.sort(key=lambda p: -p["discount_pct"])
-    return pool[:limit]
-
-
-def top_rated(limit: int = 8) -> list[dict]:
-    """Highest rated, using the Bayesian prior from ml.bayesian_rating."""
-    from .ml import bayesian_rating
-    pool = sorted(products(), key=lambda p: -bayesian_rating(p["rating"], p["reviews"]))
     return pool[:limit]
 
 

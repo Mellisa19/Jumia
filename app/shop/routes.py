@@ -37,7 +37,7 @@ from .assistant import welcome as assistant_welcome
 from .blueprint import shop
 from .cart import (COUPONS, FREE_SHIPPING_THRESHOLD, STANDARD_SHIPPING, Cart,
                    format_naira)
-from .categories import CATEGORIES, category_label
+from .categories import CATEGORIES
 from .recommender import get_recommender
 from .reviews import rating_breakdown, reviews_for
 from .serializers import (category_url, image_url, product_card, product_url,
@@ -69,6 +69,7 @@ def inject_shop_globals() -> dict:
         "shop_sort_options": catalog.SORT_OPTIONS,
         "shop_year": datetime.now(timezone.utc).year,
         "shop_assistant_intro": assistant_welcome(),
+        "shop_price_bounds": catalog.price_bounds(),
     }
 
 

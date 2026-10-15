@@ -975,6 +975,7 @@ html { overflow-x: clip; }
 .check em { font-style: normal; font-size: 11.5px; color: var(--so-ink-3); }
 
 .price-inputs { display: flex; align-items: center; gap: 7px; }
+.filter-hint { margin: -2px 0 9px; font-size: 11.5px; color: var(--so-ink-3); }
 .price-inputs input {
   width: 100%;
   padding: 8px 10px;

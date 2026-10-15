@@ -587,3 +587,20 @@ def test_dashboard_still_works(client):
     """The storefront must not have broken the existing analytics app."""
     response = client.get("/")
     assert response.status_code in (200, 302)
+
+
+def test_login_page_links_to_the_storefront(client):
+    """The deployed root is a login wall, so it must offer a route into the shop."""
+    html = client.get("/login").get_data(as_text=True)
+    assert 'href="/shop/"' in html
+    assert "storefront" in html.lower()
+
+
+def test_filter_sidebar_shows_the_catalogue_price_range(client):
+    low, high = catalog.price_bounds()
+    assert 0 < low < high
+    html = client.get("/shop/c/phones-tablets").get_data(as_text=True)
+    assert "Catalogue range" in html
+    assert format_naira(low) in html
+    assert format_naira(high) in html
+

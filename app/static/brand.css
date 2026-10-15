@@ -488,4 +488,19 @@ thead.table-header-brand th {
 .auth-card .btn-primary { height: 44px; font-size: 15px; }
 .auth-foot { margin-top: 20px; font-size: 13px; color: var(--so-ink-3); text-align: center; }
 .auth-foot a { font-weight: 600; }
+
+/* Cross-link to the storefront blueprint, so the login wall is not a dead end
+   for anyone who lands on the app root. */
+.auth-store-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--so-line);
+  font-size: 13px;
+  color: var(--so-ink-3);
+}
+.auth-store-link a { font-weight: 600; }
 .auth-flash { width: 100%; max-width: 400px; margin: 0 auto 16px; }

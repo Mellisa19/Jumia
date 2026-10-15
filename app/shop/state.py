@@ -39,10 +39,6 @@ def viewed_ids(limit: int | None = None) -> list[str]:
     return history[:limit] if limit else list(history)
 
 
-def clear_history() -> None:
-    session.pop(HISTORY_KEY, None)
-
-
 # -- wishlist -------------------------------------------------------------
 
 def wishlist_ids() -> list[str]:
@@ -65,10 +61,6 @@ def toggle_wishlist(product_id: str) -> bool:
     session[WISHLIST_KEY] = items[:60]
     session.modified = True
     return saved
-
-
-def clear_wishlist() -> None:
-    session.pop(WISHLIST_KEY, None)
 
 
 # -- orders ---------------------------------------------------------------

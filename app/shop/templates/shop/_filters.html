@@ -42,6 +42,9 @@
 
     <fieldset class="filter-group">
       <legend>Price (&#8358;)</legend>
+      <p class="filter-hint">
+        Catalogue range {{ shop_price_bounds[0]|naira }} – {{ shop_price_bounds[1]|naira }}
+      </p>
       <div class="price-inputs">
         <label>
           <span class="sr-only">Minimum price</span>
