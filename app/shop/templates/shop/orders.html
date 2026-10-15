@@ -1,0 +1,50 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}My orders — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('My orders', None)]) }}
+
+  <header class="page-head">
+    <div>
+      <h1>My orders</h1>
+      <p>Orders placed in this browser session. They are kept in the signed session cookie, not a database.</p>
+    </div>
+  </header>
+
+  {% if orders %}
+    <ul class="order-list">
+      {% for order in orders %}
+        <li class="order-row">
+          <div class="order-row-head">
+            <div>
+              <strong>{{ order.ref }}</strong>
+              <span class="order-status">{{ order.status }}</span>
+            </div>
+            <span class="order-row-date">{{ order.created[:10] }}</span>
+          </div>
+          <div class="order-row-body">
+            <div class="order-row-items">
+              {% for item in order.products[:4] %}
+                <img src="{{ shop_image_url(item.slug) }}" alt="" loading="lazy" width="48" height="48">
+              {% endfor %}
+              {% if order.products|length > 4 %}<span class="order-more">+{{ order.products|length - 4 }}</span>{% endif %}
+            </div>
+            <div class="order-row-meta">
+              <span>{{ order.item_count }} item{{ '' if order.item_count == 1 else 's' }}</span>
+              <span>ETA {{ order.eta }}</span>
+              <strong>{{ order.total|naira }}</strong>
+            </div>
+            <a class="btn btn-outline-primary btn-sm" href="{{ url_for('shop.order_confirmation', ref=order.ref) }}">View order</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    {{ m.empty_state(
+        'No orders yet',
+        'Once you place an order it appears here with its reference and delivery estimate.',
+        'Start shopping', url_for('shop.home'), 'package') }}
+  {% endif %}
+{% endblock %}

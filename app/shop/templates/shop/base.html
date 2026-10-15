@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0F6E63">
+  <title>{% block title %}Socratic Shop{% endblock %}</title>
+  <meta name="description" content="{% block description %}Socratic Shop — a Nigerian marketplace with an AI shopping assistant that searches the catalogue in plain language.{% endblock %}">
+
+  {# Set the theme before first paint so dark mode never flashes light. #}
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('shop-theme');
+        if (!stored) {
+          stored = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = stored;
+      } catch (e) { /* private mode: stay on light */ }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='brand.css') }}">
+  <link rel="stylesheet" href="{{ url_for('shop.static', filename='shop.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='brand/favicon.svg') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="shop-body {% block body_class %}{% endblock %}">
+{% include "shop/_icons.html" %}
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="util-bar">
+  <div class="wrap util-inner">
+    <span class="util-item"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> Free delivery over {{ shop_free_shipping_threshold|naira }}</span>
+    <span class="util-item util-hide-sm"><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Pay on delivery available</span>
+    <span class="util-sep"></span>
+    <a class="util-item" href="{{ url_for('shop.orders_page') }}"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg> Track order</a>
+    <a class="util-item util-hide-sm" href="{{ url_for('shop.assistant_page') }}"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> AI assistant</a>
+    <a class="util-item util-hide-sm" href="{{ url_for('main.login') }}"><svg class="ico" aria-hidden="true"><use href="#i-store"/></svg> Seller dashboard</a>
+  </div>
+</div>
+
+<header class="shop-header">
+  <div class="wrap header-inner">
+    <button class="icon-btn header-menu" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+      <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg>
+    </button>
+
+    <a class="shop-logo" href="{{ url_for('shop.home') }}" aria-label="Socratic Shop home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg>
+      </span>
+      <span class="logo-text">
+        <strong>Socratic</strong><span>Shop</span>
+      </span>
+    </a>
+
+    <form class="shop-search" action="{{ url_for('shop.search') }}" method="get" role="search" data-search-form>
+      <div class="search-field">
+        <svg class="ico search-ico" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="shop-q">Search the catalogue</label>
+        <input id="shop-q" name="q" type="search" placeholder="Search products, brands and categories"
+               value="{{ q|default('') }}" autocomplete="off" data-search-input>
+        <button class="btn-ai" type="button" data-assistant-open data-assistant-prefill>
+          <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg>
+          <span>Ask AI</span>
+        </button>
+      </div>
+      <div class="suggest-panel" data-suggest-panel hidden></div>
+    </form>
+
+    <nav class="header-actions" aria-label="Account">
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch colour theme">
+        <svg class="ico ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ico ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+
+      <details class="account-menu">
+        <summary class="header-link">
+          <svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>
+          <span class="header-link-text">
+            <small>Account</small>
+            <strong>Sign in</strong>
+          </span>
+        </summary>
+        <div class="account-dropdown">
+          <a href="{{ url_for('main.login') }}">Sign in</a>
+          <a href="{{ url_for('shop.orders_page') }}">My orders</a>
+          <a href="{{ url_for('shop.wishlist') }}">Wishlist</a>
+          <a href="{{ url_for('shop.assistant_page') }}">AI assistant</a>
+          <a href="{{ url_for('main.login') }}">Seller dashboard</a>
+        </div>
+      </details>
+
+      <a class="header-link" href="{{ url_for('shop.wishlist') }}">
+        <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
+        <span class="header-link-text">
+          <small>Saved</small>
+          <strong>Wishlist</strong>
+        </span>
+        {% if shop_wishlist_count %}<span class="pill" data-wishlist-count>{{ shop_wishlist_count }}</span>{% endif %}
+      </a>
+
+      <button class="header-link cart-trigger" type="button" data-cart-open aria-label="Open cart">
+        <svg class="ico" aria-hidden="true"><use href="#i-cart"/></svg>
+        <span class="header-link-text">
+          <small>Your</small>
+          <strong>Cart</strong>
+        </span>
+        <span class="pill pill-cart" data-cart-count {% if not shop_cart_count %}hidden{% endif %}>{{ shop_cart_count }}</span>
+      </button>
+    </nav>
+  </div>
+
+  <nav class="catnav" aria-label="Product categories">
+    <div class="wrap catnav-inner">
+      <a class="catnav-item catnav-all" href="{{ url_for('shop.deals') }}">
+        <svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg> Flash deals
+      </a>
+      {% for c in shop_categories %}
+        <a class="catnav-item" href="{{ url_for('shop.category', slug=c.slug) }}">
+          {{ c.short }}<span class="catnav-count">{{ c.count }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </nav>
+</header>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="wrap flash-stack">
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}" role="status">
+          <svg class="ico" aria-hidden="true"><use href="#i-{{ 'check' if category == 'success' else 'info' }}"/></svg>
+          <span>{{ message }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<main id="main" class="wrap shop-main">
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="shop-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <span class="shop-logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3"/></svg>
+        </span>
+        <span class="logo-text"><strong>Socratic</strong><span>Shop</span></span>
+      </span>
+      <p>A demonstration marketplace with a retrieval-grounded AI shopping assistant. Built as a portfolio project — no real payments are taken.</p>
+      <p class="footer-note">Catalog and orders are synthetic sample data.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Shop</h3>
+      <ul>
+        {% for c in shop_categories[:6] %}
+          <li><a href="{{ url_for('shop.category', slug=c.slug) }}">{{ c.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Help</h3>
+      <ul>
+        <li><a href="{{ url_for('shop.assistant_page') }}">Ask the AI assistant</a></li>
+        <li><a href="{{ url_for('shop.orders_page') }}">Track an order</a></li>
+        <li><a href="{{ url_for('shop.assistant_page') }}">Delivery and returns</a></li>
+        <li><a href="{{ url_for('shop.deals') }}">Flash deals</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Payment &amp; delivery</h3>
+      <ul class="footer-badges">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg> Card &amp; transfer</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Pay on delivery</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> 2-5 working days</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg> 7-day returns</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; {{ shop_year }} Socratic Shop — demo storefront.</span>
+    <span>Recommendations run on TF-IDF retrieval and item-to-item collaborative filtering.</span>
+  </div>
+</footer>
+
+{# ---------------- Slide-over cart ---------------- #}
+<div class="drawer-backdrop" data-cart-backdrop hidden></div>
+<aside class="drawer drawer-cart" data-cart-drawer aria-hidden="true" aria-label="Shopping cart">
+  <header class="drawer-head">
+    <h2>Your cart <span class="drawer-count" data-cart-drawer-count></span></h2>
+    <button class="icon-btn" type="button" data-cart-close aria-label="Close cart">
+      <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </header>
+  <div class="drawer-body" data-cart-body>
+    <p class="drawer-empty">Your cart is empty.</p>
+  </div>
+  <footer class="drawer-foot" data-cart-foot hidden>
+    <div class="drawer-row"><span>Subtotal</span><strong data-cart-subtotal></strong></div>
+    <div class="drawer-row drawer-row-muted" data-cart-shipping-row><span>Delivery</span><span data-cart-shipping></span></div>
+    <div class="drawer-row drawer-row-total"><span>Total</span><strong data-cart-total></strong></div>
+    <div class="free-ship" data-cart-freeship hidden>
+      <div class="free-ship-bar"><span data-cart-freeship-bar></span></div>
+      <p data-cart-freeship-text></p>
+    </div>
+    <a class="btn btn-primary btn-block" href="{{ url_for('shop.checkout') }}">Checkout</a>
+    <a class="btn btn-ghost btn-block" href="{{ url_for('shop.cart_page') }}">View full cart</a>
+  </footer>
+</aside>
+
+{# ---------------- Slide-over AI assistant ---------------- #}
+<div class="drawer-backdrop" data-assistant-backdrop hidden></div>
+<aside class="drawer drawer-assistant" data-chat-root data-assistant-drawer aria-hidden="true" aria-label="AI shopping assistant">
+  <header class="drawer-head drawer-head-ai">
+    <div class="ai-identity">
+      <span class="ai-avatar" aria-hidden="true"><svg class="ico"><use href="#i-sparkles"/></svg></span>
+      <div>
+        <h2>Ama</h2>
+        <p class="ai-status">
+          {% if shop_llm_enabled %}
+            <span class="dot dot-live"></span> Language model connected
+          {% else %}
+            <span class="dot"></span> Catalogue search · add an API key for prose
+          {% endif %}
+        </p>
+      </div>
+    </div>
+    <button class="icon-btn" type="button" data-assistant-close aria-label="Close assistant">
+      <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </header>
+
+  {% set chat_id = 'drawer' %}
+  {% include "shop/_chat_panel.html" %}
+</aside>
+
+<button class="ai-launcher" type="button" data-assistant-open aria-label="Open the AI shopping assistant">
+  <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg>
+  <span>Ask Ama</span>
+</button>
+
+<div class="toast-stack" data-toast-stack aria-live="polite"></div>
+
+<script src="{{ url_for('shop.static', filename='shop.js') }}" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

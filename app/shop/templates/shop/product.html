@@ -1,0 +1,297 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}{{ product.title }} — Socratic Shop{% endblock %}
+{% block description %}{{ product.description[:150] }}{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([
+      (product.category_label, url_for('shop.category', slug=product.category)),
+      (product.title, None)
+  ]) }}
+
+  <div class="pdp" data-product="{{ product.id }}" data-product-title="{{ product.title }}">
+
+    {# ---------- Gallery ---------- #}
+    <div class="pdp-gallery">
+      <div class="gallery-main">
+        <img data-gallery-main src="{{ gallery[0] }}" alt="{{ product.title }}" width="640" height="640" decoding="async">
+        {% if product.discount_pct %}<span class="badge badge-off badge-lg">-{{ product.discount_pct }}%</span>{% endif %}
+        {% if product.flash %}<span class="badge badge-flash badge-lg"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg>Flash sale</span>{% endif %}
+      </div>
+      <div class="gallery-thumbs" role="tablist" aria-label="Product images">
+        {% for src in gallery %}
+          <button class="gallery-thumb {% if loop.first %}is-active{% endif %}" type="button"
+                  role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}"
+                  data-gallery-thumb data-src="{{ src }}" aria-label="View image {{ loop.index }} of 4">
+            <img src="{{ src }}" alt="" loading="lazy" width="80" height="80">
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+
+    {# ---------- Details ---------- #}
+    <div class="pdp-details">
+      <h1 class="pdp-title">{{ product.title }}</h1>
+      <p class="pdp-sub">
+        <a href="{{ url_for('shop.search', q=product.brand) }}">{{ product.brand }}</a>
+        <span class="dot-sep">·</span>
+        <a href="{{ url_for('shop.category', slug=product.category) }}">{{ product.subcategory }}</a>
+        <span class="dot-sep">·</span>
+        Sold by <strong>{{ product.seller }}</strong>
+      </p>
+
+      <div class="pdp-rating">
+        {{ m.stars(product.rating) }}
+        <strong>{{ product.rating }}</strong>
+        <a href="#reviews">{{ product.reviews }} ratings</a>
+        <span class="dot-sep">·</span>
+        <span class="pdp-sold">{{ product.sold }} sold</span>
+      </div>
+
+      <div class="pdp-price">
+        <span class="pdp-price-now">{{ product.price|naira }}</span>
+        {% if product.old_price > product.price %}
+          <s class="pdp-price-was">{{ product.old_price|naira }}</s>
+          <span class="pdp-price-save">Save {{ (product.old_price - product.price)|naira }}</span>
+        {% endif %}
+      </div>
+      <p class="pdp-vat">VAT included · Price in Nigerian Naira</p>
+
+      {% if product.variants %}
+        <div class="pdp-variants">
+          {% for name, options in product.variants.items() %}
+            <div class="variant-group" data-variant-group>
+              <span class="variant-label">{{ name }}</span>
+              <div class="variant-options">
+                {% for option in options %}
+                  <button class="variant-chip {% if loop.first %}is-active{% endif %}" type="button"
+                          data-variant-option aria-pressed="{{ 'true' if loop.first else 'false' }}">{{ option }}</button>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form class="pdp-buy" method="post" action="{{ url_for('shop.cart_add') }}" data-add-form>
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+        <input type="hidden" name="next" value="{{ request.path }}">
+
+        <div class="qty-stepper" data-qty-stepper>
+          <button type="button" data-qty-down aria-label="Decrease quantity">
+            <svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg>
+          </button>
+          <label class="sr-only" for="pdp-qty">Quantity</label>
+          <input id="pdp-qty" type="number" name="qty" value="1" min="1" max="{{ product.stock }}" data-qty-input>
+          <button type="button" data-qty-up aria-label="Increase quantity">
+            <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+          </button>
+        </div>
+
+        <button class="btn btn-primary btn-lg" type="submit">
+          <svg class="ico" aria-hidden="true"><use href="#i-cart"/></svg> Add to cart
+        </button>
+        <button class="btn btn-accent btn-lg" type="submit" data-add-next="{{ url_for('shop.checkout') }}">
+          Buy now
+        </button>
+        <button class="btn btn-ghost btn-lg wish-inline" type="button"
+                data-wishlist-toggle data-product-id="{{ product.id }}"
+                aria-pressed="{{ 'true' if in_wishlist else 'false' }}">
+          <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span data-wishlist-label>{{ 'Saved' if in_wishlist else 'Save' }}</span>
+        </button>
+      </form>
+
+      <ul class="pdp-perks">
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>
+          <div>
+            <strong>Delivery {{ delivery_from }} – {{ delivery_to }}</strong>
+            <span>{{ 'Express eligible' if product.express else 'Standard delivery' }} · Free over {{ shop_free_shipping_threshold|naira }}</span>
+          </div>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
+          <div>
+            <strong>{{ product.warranty_months }}-month seller warranty</strong>
+            <span>Pay on delivery available in Lagos, Abuja and Port Harcourt</span>
+          </div>
+        </li>
+        <li>
+          <svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg>
+          <div>
+            <strong>7-day free returns</strong>
+            <span>Unused and in original packaging</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ai-inline" data-ai-product="{{ product.slug }}">
+        <div class="ai-inline-head">
+          <span class="ai-avatar ai-avatar-sm" aria-hidden="true"><svg class="ico"><use href="#i-sparkles"/></svg></span>
+          <strong>Ask Ama about this product</strong>
+        </div>
+        <div class="ai-prompts">
+          <button class="chip chip-sm" type="button" data-assistant-open data-assistant-send="Is the {{ product.title }} good value for money?">Is it good value?</button>
+          <button class="chip chip-sm" type="button" data-assistant-open data-assistant-send="What are cheaper alternatives to the {{ product.title }}?">Cheaper alternatives</button>
+          <button class="chip chip-sm" type="button" data-assistant-open data-assistant-send="Compare the {{ product.title }} with similar products">Compare similar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# ---------- Tabs ---------- #}
+  <section class="pdp-tabs" data-tabs>
+    <div class="tab-list" role="tablist" aria-label="Product information">
+      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-desc" id="tabbtn-desc" data-tab="desc">Description</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-specs" id="tabbtn-specs" data-tab="specs">Specifications</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tab-reviews" id="tabbtn-reviews" data-tab="reviews">
+        Ratings &amp; reviews <span class="tab-count">{{ product.reviews }}</span>
+      </button>
+    </div>
+
+    <div class="tab-panel is-active" id="tab-desc" role="tabpanel" aria-labelledby="tabbtn-desc" data-panel="desc">
+      <p class="pdp-desc">{{ product.description }}</p>
+      <ul class="tag-list">
+        {% for tag in product.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+      </ul>
+    </div>
+
+    <div class="tab-panel" id="tab-specs" role="tabpanel" aria-labelledby="tabbtn-specs" data-panel="specs" hidden>
+      <table class="spec-table">
+        <caption class="sr-only">Specifications for {{ product.title }}</caption>
+        <tbody>
+          <tr><th scope="row">Brand</th><td>{{ product.brand }}</td></tr>
+          <tr><th scope="row">Category</th><td>{{ product.category_label }} · {{ product.subcategory }}</td></tr>
+          {% for key, value in product.specs.items() %}
+            <tr><th scope="row">{{ key }}</th><td>{{ value }}</td></tr>
+          {% endfor %}
+          <tr><th scope="row">Warranty</th><td>{{ product.warranty_months }} months</td></tr>
+          <tr><th scope="row">In stock</th><td>{{ product.stock }} units</td></tr>
+          <tr><th scope="row">SKU</th><td>{{ product.id }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-panel" id="tab-reviews" role="tabpanel" aria-labelledby="tabbtn-reviews" data-panel="reviews" hidden>
+      <div class="reviews" id="reviews">
+        <div class="reviews-summary">
+          <div class="reviews-score">
+            <strong>{{ product.rating }}</strong>
+            {{ m.stars(product.rating) }}
+            <span>{{ product.reviews }} verified ratings</span>
+          </div>
+          <div class="reviews-bars">
+            {% for row in breakdown %}
+              <div class="review-bar">
+                <span class="review-bar-label">{{ row.stars }} ★</span>
+                <span class="review-bar-track"><span class="review-bar-fill" style="width: {{ row.share }}%"></span></span>
+                <span class="review-bar-count">{{ row.count }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <ul class="review-list">
+          {% for r in reviews %}
+            <li class="review">
+              <div class="review-head">
+                <span class="review-avatar" aria-hidden="true">{{ r.author[:1] }}</span>
+                <div>
+                  <strong>{{ r.author }}</strong>
+                  <span class="review-meta">{{ r.city }} · {{ r.days_ago }} days ago{% if r.verified %} · <em class="verified"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Verified purchase</em>{% endif %}</span>
+                </div>
+                <span class="review-stars">{{ m.stars(r.stars) }}</span>
+              </div>
+              <p>{{ r.body }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+        <p class="reviews-note">
+          <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+          Reviews are synthetic sample content generated deterministically for this portfolio project.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {# ---------- Frequently bought together ---------- #}
+  {% if bundle and bundle.products|length > 1 %}
+    <section class="block bundle" aria-labelledby="bundle-h">
+      {{ m.section_head('Frequently bought together', 'Learned from item co-occurrence across order baskets, filtered to pairs with real lift.', icon='package') }}
+      <form class="bundle-body" method="post" action="{{ url_for('shop.cart_add_bundle') }}">
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <div class="bundle-items">
+          {% for item in bundle.products %}
+            <input type="hidden" name="product_id" value="{{ item.id }}">
+            <a class="bundle-item" href="{{ url_for('shop.product_detail', slug=item.slug) }}">
+              <img src="{{ shop_image_url(item.slug) }}" alt="" loading="lazy" width="120" height="120">
+              <span class="bundle-item-title">{{ item.title }}</span>
+              <strong>{{ item.price|naira }}</strong>
+            </a>
+            {% if not loop.last %}<span class="bundle-plus" aria-hidden="true"><svg class="ico"><use href="#i-plus"/></svg></span>{% endif %}
+          {% endfor %}
+        </div>
+        <div class="bundle-total">
+          <p class="bundle-price">
+            <span>Bundle price</span>
+            <strong>{{ bundle.total|naira }}</strong>
+            <s>{{ bundle.total_old|naira }}</s>
+            <em>Save {{ bundle.saving|naira }}</em>
+          </p>
+          <button class="btn btn-primary" type="submit">
+            <svg class="ico" aria-hidden="true"><use href="#i-cart"/></svg>
+            Add all {{ bundle.products|length }} to cart
+          </button>
+        </div>
+      </form>
+    </section>
+  {% endif %}
+
+  {# ---------- Recommendation shelves ---------- #}
+  {% if also_bought %}
+    <section class="block" aria-labelledby="also-h">
+      {{ m.section_head('Customers also bought', 'Item-to-item collaborative filtering over 420 sample order baskets.', icon='cart') }}
+      <div class="rail">{% for p in also_bought %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+
+  {% if similar %}
+    <section class="block" aria-labelledby="similar-h">
+      {{ m.section_head('Similar products', 'TF-IDF cosine similarity across the product text.', icon='search') }}
+      <div class="rail">{% for p in similar %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+
+  {% if related %}
+    <section class="block" aria-labelledby="related-h">
+      {{ m.section_head('More in ' ~ product.category_label, link=url_for('shop.category', slug=product.category), link_label='View department', icon='tag') }}
+      {{ m.product_grid(related, False) }}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title|tojson }},
+  "brand": { "@type": "Brand", "name": {{ product.brand|tojson }} },
+  "description": {{ product.description|tojson }},
+  "sku": {{ product.id|tojson }},
+  "offers": {
+    "@type": "Offer",
+    "price": {{ product.price }},
+    "priceCurrency": "NGN",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ product.rating }},
+    "reviewCount": {{ product.reviews }}
+  }
+}
+</script>
+{% endblock %}

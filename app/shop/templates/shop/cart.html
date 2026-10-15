@@ -1,0 +1,176 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Your cart — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Cart', None)]) }}
+
+  <header class="page-head">
+    <div>
+      <h1>Your cart</h1>
+      <p>
+        {% if cart.lines %}
+          {{ cart.item_count }} item{{ '' if cart.item_count == 1 else 's' }} ready to check out.
+        {% else %}
+          Nothing here yet.
+        {% endif %}
+      </p>
+    </div>
+  </header>
+
+  {% if cart.lines %}
+    <div class="cart-layout">
+      <div class="cart-lines">
+        {% for line in cart.lines %}
+          <article class="cart-line">
+            <a class="cart-line-media" href="{{ url_for('shop.product_detail', slug=line.product.slug) }}">
+              <img src="{{ shop_image_url(line.product.slug) }}" alt="" loading="lazy" width="140" height="140">
+            </a>
+
+            <div class="cart-line-info">
+              <h2 class="cart-line-title">
+                <a href="{{ url_for('shop.product_detail', slug=line.product.slug) }}">{{ line.product.title }}</a>
+              </h2>
+              <p class="cart-line-sub">{{ line.product.brand }} · {{ line.product.subcategory }}</p>
+              {% if line.product.express %}
+                <p class="cart-line-badge"><span class="badge badge-express">Express eligible</span></p>
+              {% endif %}
+
+              <div class="cart-line-controls">
+                <form method="post" action="{{ url_for('shop.cart_update') }}">
+                  <input type="hidden" name="next" value="{{ url_for('shop.cart_page') }}">
+                  <div class="qty-stepper qty-stepper-sm" data-qty-stepper>
+                    <button type="button" data-qty-down aria-label="Decrease quantity of {{ line.product.title }}">
+                      <svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg>
+                    </button>
+                    <label class="sr-only" for="qty-{{ line.product.id }}">Quantity</label>
+                    <input id="qty-{{ line.product.id }}" type="number" name="qty_{{ line.product.id }}"
+                           value="{{ line.qty }}" min="0" max="{{ line.max_qty }}" data-qty-input data-autosubmit-qty>
+                    <button type="button" data-qty-up aria-label="Increase quantity of {{ line.product.title }}">
+                      <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+                    </button>
+                  </div>
+                  <noscript><button class="btn btn-ghost btn-sm" type="submit">Update</button></noscript>
+                </form>
+
+                <form method="post" action="{{ url_for('shop.cart_remove') }}">
+                  <input type="hidden" name="product_id" value="{{ line.product.id }}">
+                  <input type="hidden" name="next" value="{{ url_for('shop.cart_page') }}">
+                  <button class="link-btn link-danger" type="submit">
+                    <svg class="ico" aria-hidden="true"><use href="#i-trash"/></svg> Remove
+                  </button>
+                </form>
+
+                <form method="post" action="{{ url_for('shop.cart_remove') }}">
+                  <input type="hidden" name="product_id" value="{{ line.product.id }}">
+                  <input type="hidden" name="next" value="{{ url_for('shop.wishlist') }}">
+                  <button class="link-btn" type="submit">
+                    <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> Move to wishlist
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="cart-line-price">
+              <strong>{{ line.line_total|naira }}</strong>
+              {% if line.line_saving %}
+                <s>{{ line.line_old_total|naira }}</s>
+                <em>Save {{ line.line_saving|naira }}</em>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+
+        <div class="cart-lines-foot">
+          <a class="link-btn" href="{{ url_for('shop.home') }}">
+            <svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg> Continue shopping
+          </a>
+          <form method="post" action="{{ url_for('shop.cart_clear') }}">
+            <input type="hidden" name="next" value="{{ url_for('shop.cart_page') }}">
+            <button class="link-btn link-danger" type="submit">
+              <svg class="ico" aria-hidden="true"><use href="#i-trash"/></svg> Empty cart
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="summary">
+        <h2 class="summary-title">Order summary</h2>
+
+        <form class="coupon" method="post" action="{{ url_for('shop.cart_coupon') }}">
+          <input type="hidden" name="next" value="{{ url_for('shop.cart_page') }}">
+          {% if cart.coupon %}
+            <div class="coupon-applied">
+              <div>
+                <strong>{{ cart.coupon }}</strong>
+                <span>{{ cart.coupon_rule.label }}</span>
+              </div>
+              <button class="link-btn link-danger" type="submit" name="remove" value="1">Remove</button>
+            </div>
+          {% else %}
+            <label for="coupon-code">Coupon code</label>
+            <div class="coupon-row">
+              <input id="coupon-code" type="text" name="code" placeholder="WELCOME10" autocomplete="off">
+              <button class="btn btn-outline-primary" type="submit">Apply</button>
+            </div>
+            <p class="coupon-hint">
+              Try
+              {% for code in shop_coupons %}<button class="chip chip-sm" type="button" data-coupon-fill="{{ code }}">{{ code }}</button>{% endfor %}
+            </p>
+          {% endif %}
+        </form>
+
+        <dl class="summary-rows">
+          <div><dt>Subtotal ({{ cart.item_count }} item{{ '' if cart.item_count == 1 else 's' }})</dt><dd>{{ cart.subtotal|naira }}</dd></div>
+          {% if cart.discount %}
+            <div class="is-credit"><dt>Coupon {{ cart.coupon }}</dt><dd>−{{ cart.discount|naira }}</dd></div>
+          {% endif %}
+          <div>
+            <dt>Delivery{% if cart.express %} (express){% endif %}</dt>
+            <dd>{% if cart.shipping == 0 %}Free{% else %}{{ cart.shipping|naira }}{% endif %}</dd>
+          </div>
+        </dl>
+
+        {% if cart.free_shipping_remaining %}
+          <div class="free-ship free-ship-inline">
+            <div class="free-ship-bar"><span style="width: {{ (100 - (cart.free_shipping_remaining / shop_free_shipping_threshold * 100))|round(1) }}%"></span></div>
+            <p>Add {{ cart.free_shipping_remaining|naira }} more for free delivery.</p>
+          </div>
+        {% else %}
+          <p class="free-ship-won"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Free delivery unlocked</p>
+        {% endif %}
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong>{{ cart.total|naira }}</strong>
+        </div>
+        {% if cart.total_saving %}
+          <p class="summary-saving">You are saving {{ cart.total_saving|naira }} on this order.</p>
+        {% endif %}
+        <p class="summary-vat">Includes {{ cart.vat_included|naira }} VAT (7.5%)</p>
+
+        <a class="btn btn-primary btn-block btn-lg" href="{{ url_for('shop.checkout') }}">
+          Proceed to checkout <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+        </a>
+        <p class="summary-note">
+          <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>
+          Demo checkout — no payment is taken and no card details are stored.
+        </p>
+      </aside>
+    </div>
+
+  {% else %}
+    {{ m.empty_state(
+        'Your cart is empty',
+        'Browse the catalogue or ask the AI assistant to shortlist something for you.',
+        'Start shopping', url_for('shop.home'), 'cart') }}
+  {% endif %}
+
+  {% if suggestions %}
+    <section class="block">
+      {{ m.section_head('You might also like', 'Recommended from your browsing history and what is selling now.', icon='sparkles') }}
+      <div class="rail">{% for p in suggestions %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endblock %}

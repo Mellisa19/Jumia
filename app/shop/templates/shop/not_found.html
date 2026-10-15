@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Not found — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.empty_state(
+      'We could not find that',
+      message ~ ' Try searching the catalogue, or ask the assistant to interpret what you wanted.',
+      'Back to the storefront', url_for('shop.home'), 'search') }}
+
+  <div class="notfound-actions">
+    <button class="btn btn-primary" type="button" data-assistant-open>
+      <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Ask the AI assistant
+    </button>
+    <a class="btn btn-ghost" href="{{ url_for('shop.deals') }}">See flash deals</a>
+  </div>
+{% endblock %}

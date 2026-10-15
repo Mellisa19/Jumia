@@ -1,0 +1,32 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}{{ category.label }} — Socratic Shop{% endblock %}
+{% block description %}Shop {{ category.label|lower }} on Socratic Shop. {{ category.blurb }}.{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([(category.label, None)]) }}
+
+  <header class="page-head">
+    <div>
+      <h1>{{ category.label }}</h1>
+      <p>{{ category.blurb }} · <strong>{{ page_data.total }}</strong> product{{ '' if page_data.total == 1 else 's' }}</p>
+    </div>
+    <button class="btn btn-outline-primary btn-sm" type="button"
+            data-assistant-open data-assistant-send="Help me pick the best {{ category.label|lower }}">
+      <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Ask AI about {{ category.short|lower }}
+    </button>
+  </header>
+
+  {% if picks %}
+    <section class="block block-tight" aria-label="Recommended in this category">
+      {{ m.section_head('Ama suggests', 'The strongest sellers in this department right now.', icon='sparkles') }}
+      <div class="rail">
+        {% for p in picks %}{{ m.product_card(p) }}{% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% set action_url = url_for('shop.category', slug=category_slug) %}
+  {% include "shop/_listing.html" %}
+{% endblock %}

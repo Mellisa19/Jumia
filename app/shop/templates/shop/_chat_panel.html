@@ -1,0 +1,41 @@
+{# Chat surface, shared by the slide-over drawer and the full assistant page.
+   Both instances are independent: shop.js binds each [data-chat-root] separately.
+   Params: chat_id #}
+{% set welcome = intro if intro is defined and intro else shop_assistant_intro %}
+
+<div class="chat-log" data-chat-log>
+  <div class="chat-msg chat-bot">
+    <div class="chat-bubble">
+      <p>{{ welcome.reply }}</p>
+      {% if welcome.products %}
+        <div class="chat-products">
+          {% for p in welcome.products %}
+            <a class="chat-product" href="{{ p.url }}">
+              <img src="{{ p.image }}" alt="" loading="lazy" width="56" height="56">
+              <span>
+                <strong>{{ p.title }}</strong>
+                <em>{{ p.price_display }}</em>
+              </span>
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="chat-chips" data-chat-chips>
+  {% for chip in welcome.chips %}
+    <button class="chip" type="button" data-chat-chip>{{ chip }}</button>
+  {% endfor %}
+</div>
+
+<form class="chat-form" data-chat-form>
+  <label class="sr-only" for="chat-input-{{ chat_id }}">Message the assistant</label>
+  <input id="chat-input-{{ chat_id }}" type="text" class="chat-input"
+         placeholder="e.g. a phone under ₦200,000 with a big battery"
+         autocomplete="off" data-chat-input maxlength="600">
+  <button class="chat-send" type="submit" aria-label="Send message">
+    <svg class="ico" aria-hidden="true"><use href="#i-send"/></svg>
+  </button>
+</form>

@@ -1,0 +1,89 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}AI shopping assistant — Socratic Shop{% endblock %}
+{% block description %}Ask Ama, the Socratic Shop assistant, to find products by budget, brand or problem. Retrieval-grounded, so it only ever shows real catalogue items.{% endblock %}
+
+{% block content %}
+  <header class="page-head">
+    <div>
+      <h1>Ask Ama</h1>
+      <p>The assistant searches the real catalogue in plain language, then explains the trade-offs.</p>
+    </div>
+    <span class="engine-badge {% if llm_enabled %}is-live{% endif %}">
+      <span class="dot {% if llm_enabled %}dot-live{% endif %}"></span>
+      {% if llm_enabled %}Language model prose enabled{% else %}Catalogue rules only{% endif %}
+    </span>
+  </header>
+
+  <div class="assistant-layout">
+    <section class="assistant-chat" data-chat-root data-chat-primary aria-label="Chat with the assistant">
+      {% set chat_id = 'page' %}
+      {% include "shop/_chat_panel.html" %}
+    </section>
+
+    <aside class="assistant-side">
+      <div class="side-card">
+        <h2>How it works</h2>
+        <ol class="how-list">
+          <li>
+            <span class="how-num">1</span>
+            <div>
+              <strong>Your words are parsed</strong>
+              <p>Budget, category, brand and intent are extracted — "under ₦200k" becomes a real price ceiling.</p>
+            </div>
+          </li>
+          <li>
+            <span class="how-num">2</span>
+            <div>
+              <strong>The catalogue is searched</strong>
+              <p>TF-IDF retrieval ranks every product, then description filters narrow it down.</p>
+            </div>
+          </li>
+          <li>
+            <span class="how-num">3</span>
+            <div>
+              <strong>Only real products come back</strong>
+              <p>Products always come from retrieval. A language model, when configured, only writes the surrounding prose — it cannot invent a product or a price.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="side-card">
+        <h2>Try asking</h2>
+        <div class="ai-prompts">
+          {% for chip in intro.chips %}
+            <button class="chip chip-block" type="button" data-chat-chip>{{ chip }}</button>
+          {% endfor %}
+          <button class="chip chip-block" type="button" data-chat-chip>What can I get for ₦50,000?</button>
+          <button class="chip chip-block" type="button" data-chat-chip>Show me the best value appliances</button>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h2>Quick answers</h2>
+        <div class="faq">
+          {% for key, entry in faq.items() %}
+            <details>
+              <summary>{{ entry.title }}</summary>
+              <p>{{ entry.answer }}</p>
+            </details>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if not llm_enabled %}
+        <div class="side-card side-card-note">
+          <h2>Enable model-written replies</h2>
+          <p>
+            Set <code>SHOP_LLM_API_KEY</code> (and optionally <code>SHOP_LLM_BASE_URL</code>,
+            <code>SHOP_LLM_MODEL</code>) and the assistant keeps the same retrieval, but a
+            language model writes the answer. If the key fails, it falls back to these rules
+            automatically.
+          </p>
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+{% endblock %}

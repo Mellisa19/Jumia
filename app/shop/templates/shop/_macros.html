@@ -1,0 +1,141 @@
+{# Shared building blocks for the storefront. Macros accept either a
+   serializer "card" (from app.shop.serializers) or a raw catalog row, so a
+   template never has to care which one it was handed. #}
+
+{% macro stars(rating, reviews=None, size='sm') %}
+  {% set pct = ((rating or 0) / 5 * 100) %}
+  <span class="stars stars-{{ size }}" title="{{ '%.1f'|format(rating or 0) }} out of 5">
+    <span class="stars-empty" aria-hidden="true">★★★★★</span>
+    <span class="stars-full" style="width: {{ '%.1f'|format(pct) }}%" aria-hidden="true">★★★★★</span>
+    <span class="sr-only">{{ '%.1f'|format(rating or 0) }} out of 5</span>
+  </span>
+  {% if reviews is not none %}<span class="rating-count">({{ reviews }})</span>{% endif %}
+{% endmacro %}
+
+
+{% macro price(p) %}
+  {% set now = p.price_display if p.price_display is defined else p.price|naira %}
+  {% set was = p.old_price_display if p.old_price_display is defined else (p.old_price|naira if p.old_price else None) %}
+  <span class="price">
+    <strong>{{ now }}</strong>
+    {% if p.old_price and p.old_price > p.price %}<s class="price-was">{{ was }}</s>{% endif %}
+  </span>
+{% endmacro %}
+
+
+{% macro product_card(p, show_reason=True) %}
+  {% set url = p.url if p.url is defined else shop_product_url(p.slug) %}
+  {% set img = p.image if p.image is defined else shop_image_url(p.slug) %}
+  <article class="pcard">
+    <div class="pcard-media-wrap">
+      <a class="pcard-media" href="{{ url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ img }}" alt="" loading="lazy" decoding="async" width="320" height="320">
+      </a>
+      {% if p.discount_pct %}<span class="badge badge-off">-{{ p.discount_pct }}%</span>{% endif %}
+      {% if p.flash %}<span class="badge badge-flash"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg>Flash</span>{% endif %}
+      {% if p.express %}<span class="badge badge-express">Express</span>{% endif %}
+      <button class="wish-btn" type="button" data-wishlist-toggle data-product-id="{{ p.id }}"
+              aria-label="Save {{ p.title }} to your wishlist" aria-pressed="false">
+        <svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>
+      </button>
+    </div>
+
+    <div class="pcard-body">
+      <h3 class="pcard-title"><a href="{{ url }}">{{ p.title }}</a></h3>
+      <p class="pcard-sub">{{ p.brand }}{% if p.subcategory %} · {{ p.subcategory }}{% endif %}</p>
+      {{ price(p) }}
+      <div class="pcard-meta">
+        {{ stars(p.rating, p.reviews) }}
+        <span class="pcard-sold">{{ p.sold }} sold</span>
+      </div>
+      {% if show_reason and p.reason is defined and p.reason %}
+        <p class="pcard-reason"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg>{{ p.reason }}</p>
+      {% endif %}
+    </div>
+
+    <form class="pcard-actions" method="post" action="{{ url_for('shop.cart_add') }}" data-add-form>
+      <input type="hidden" name="product_id" value="{{ p.id }}">
+      <input type="hidden" name="next" value="{{ request.full_path if request else '/shop/' }}">
+      <button class="btn btn-primary btn-sm btn-block" type="submit">
+        <svg class="ico" aria-hidden="true"><use href="#i-cart"/></svg> Add to cart
+      </button>
+    </form>
+  </article>
+{% endmacro %}
+
+
+{% macro product_grid(items, show_reason=True, empty_message='Nothing here yet.') %}
+  {% if items %}
+    <div class="pgrid">
+      {% for p in items %}{{ product_card(p, show_reason) }}{% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-inline">{{ empty_message }}</p>
+  {% endif %}
+{% endmacro %}
+
+
+{% macro section_head(title, subtitle=None, link=None, link_label='See all', icon=None) %}
+  <header class="section-head">
+    <div>
+      <h2 class="section-title">
+        {% if icon %}<svg class="ico section-ico" aria-hidden="true"><use href="#i-{{ icon }}"/></svg>{% endif %}
+        {{ title }}
+      </h2>
+      {% if subtitle %}<p class="section-sub">{{ subtitle }}</p>{% endif %}
+    </div>
+    {% if link %}
+      <a class="section-link" href="{{ link }}">{{ link_label }} <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    {% endif %}
+  </header>
+{% endmacro %}
+
+
+{% macro breadcrumbs(trail) %}
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a href="{{ url_for('shop.home') }}">Home</a>
+    {% for label, url in trail %}
+      <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      {% if url %}<a href="{{ url }}">{{ label }}</a>{% else %}<span aria-current="page">{{ label }}</span>{% endif %}
+    {% endfor %}
+  </nav>
+{% endmacro %}
+
+
+{% macro pagination(page_data) %}
+  {% if page_data.pages > 1 %}
+    <nav class="pagination" aria-label="Pagination">
+      {% if page_data.has_prev %}
+        <a class="page-btn" href="{{ shop_page_url(page_data.prev_page) }}" rel="prev">
+          <svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg> Previous
+        </a>
+      {% else %}
+        <span class="page-btn page-btn-disabled"><svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg> Previous</span>
+      {% endif %}
+
+      <span class="page-status">Page {{ page_data.page }} of {{ page_data.pages }}
+        <small>({{ page_data.total }} product{{ '' if page_data.total == 1 else 's' }})</small>
+      </span>
+
+      {% if page_data.has_next %}
+        <a class="page-btn" href="{{ shop_page_url(page_data.next_page) }}" rel="next">
+          Next <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+        </a>
+      {% else %}
+        <span class="page-btn page-btn-disabled">Next <svg class="ico" aria-hidden="true"><use href="#i-chevron-right"/></svg></span>
+      {% endif %}
+    </nav>
+  {% endif %}
+{% endmacro %}
+
+
+{% macro empty_state(title, body, cta_label=None, cta_url=None, icon='search') %}
+  <div class="empty-state">
+    <span class="empty-ico" aria-hidden="true"><svg class="ico"><use href="#i-{{ icon }}"/></svg></span>
+    <h2>{{ title }}</h2>
+    <p>{{ body }}</p>
+    {% if cta_label and cta_url %}
+      <a class="btn btn-primary" href="{{ cta_url }}">{{ cta_label }}</a>
+    {% endif %}
+  </div>
+{% endmacro %}

@@ -1,0 +1,81 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}{% if q %}“{{ q }}” — {% endif %}Search — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Search', None)]) }}
+
+  <header class="page-head">
+    <div>
+      <h1>{% if q %}Results for “{{ q }}”{% else %}Search the catalogue{% endif %}</h1>
+      <p>
+        {% if q %}
+          <strong>{{ page_data.total }}</strong> match{{ '' if page_data.total == 1 else 'es' }},
+          ranked by TF-IDF relevance over titles, brands, tags and specifications.
+        {% else %}
+          Type a product, brand or problem — or ask the assistant to interpret it for you.
+        {% endif %}
+      </p>
+    </div>
+    {% if q %}
+      <button class="btn btn-outline-primary btn-sm" type="button" data-assistant-open data-assistant-send="{{ q }}">
+        <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Ask AI instead
+      </button>
+    {% endif %}
+  </header>
+
+  {% if q and page_data.total %}
+    {% set action_url = url_for('shop.search') %}
+    {% set hidden_q = q %}
+    {% include "shop/_listing.html" %}
+
+  {% elif q and ai_hint %}
+    <div class="ai-card ai-card-inline">
+      <span class="ai-card-badge"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg>
+        Ama read your search
+        {% if ai_hint.engine == 'llm' %}<em class="ai-engine">language model</em>{% else %}<em class="ai-engine">catalogue rules</em>{% endif %}
+      </span>
+      <p class="ai-reply">{{ ai_hint.reply }}</p>
+      {% if ai_hint.chips %}
+        <div class="ai-prompts">
+          {% for chip in ai_hint.chips %}
+            <button class="chip" type="button" data-assistant-open data-assistant-send="{{ chip }}">{{ chip }}</button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if ai_hint.products %}
+      <section class="block block-tight">
+        {{ m.section_head('What the assistant suggests instead') }}
+        {{ m.product_grid(ai_hint.products, False) }}
+      </section>
+    {% endif %}
+
+    {% if fallback %}
+      <section class="block block-tight">
+        {{ m.section_head('Trending in the store right now') }}
+        <div class="rail">{% for p in fallback %}{{ m.product_card(p) }}{% endfor %}</div>
+      </section>
+    {% endif %}
+
+  {% else %}
+    {{ m.empty_state(
+        'Search the whole catalogue',
+        'Try a product name like “Galaxy A15”, a category like “laptops”, or a budget like “under ₦50,000”.',
+        'Browse flash deals', url_for('shop.deals'), 'search') }}
+    <section class="block">
+      {{ m.section_head('Every department') }}
+      <div class="cat-tiles">
+        {% for c in shop_categories %}
+          <a class="cat-tile" href="{{ url_for('shop.category', slug=c.slug) }}" style="--hue: {{ c.hue }}">
+            <span class="cat-tile-mark" aria-hidden="true">{{ c.short[:2] }}</span>
+            <span class="cat-tile-label">{{ c.label }}</span>
+            <span class="cat-tile-count">{{ c.count }} items</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}

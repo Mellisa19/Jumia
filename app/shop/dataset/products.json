@@ -1,0 +1,3083 @@
+[
+ {
+  "id": "SKU-0001",
+  "slug": "samsung-galaxy-a15-128gb",
+  "title": "Samsung Galaxy A15 128GB",
+  "brand": "Samsung",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Smartphones",
+  "price": 189000,
+  "old_price": 236200,
+  "discount_pct": 20,
+  "rating": 4.6,
+  "reviews": 910,
+  "sold": 275,
+  "stock": 136,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "smartphone",
+   "android",
+   "amoled",
+   "dual sim",
+   "4g"
+  ],
+  "specs": {
+   "Display": "6.5\" Super AMOLED",
+   "Battery": "5000mAh",
+   "Camera": "50MP triple",
+   "Storage": "128GB / 4GB RAM"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "The Samsung Galaxy A15 128GB from Samsung is built for everyday use in Benin City. Expect dependable build quality, honest specifications and spares that are easy to find. Backed by a 12-month Samsung warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 106,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0002",
+  "slug": "tecno-spark-20-pro-256gb",
+  "title": "Tecno Spark 20 Pro 256GB",
+  "brand": "Tecno",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Smartphones",
+  "price": 165500,
+  "old_price": 217800,
+  "discount_pct": 24,
+  "rating": 4.4,
+  "reviews": 161,
+  "sold": 2179,
+  "stock": 93,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "smartphone",
+   "android",
+   "budget",
+   "big battery",
+   "dual sim"
+  ],
+  "specs": {
+   "Display": "6.78\" 120Hz",
+   "Battery": "5000mAh",
+   "Camera": "108MP",
+   "Storage": "256GB / 8GB RAM"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "The Tecno Spark 20 Pro 256GB from Tecno is built for everyday use in Lagos. It is one of the most reviewed options in its price band this month. Backed by a 12-month Tecno warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 202,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0003",
+  "slug": "infinix-hot-40i-128gb",
+  "title": "Infinix Hot 40i 128GB",
+  "brand": "Infinix",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Smartphones",
+  "price": 132000,
+  "old_price": 151700,
+  "discount_pct": 13,
+  "rating": 4.0,
+  "reviews": 104,
+  "sold": 2364,
+  "stock": 122,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "smartphone",
+   "android",
+   "budget",
+   "dual sim"
+  ],
+  "specs": {
+   "Display": "6.6\" 90Hz",
+   "Battery": "5000mAh",
+   "Camera": "50MP",
+   "Storage": "128GB / 8GB RAM"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "A smartphones pick from Infinix: the Infinix Hot 40i 128GB pairs buyers consistently mention value for money and fast delivery. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 183,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0004",
+  "slug": "xiaomi-redmi-note-13-256gb",
+  "title": "Xiaomi Redmi Note 13 256GB",
+  "brand": "Xiaomi",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Smartphones",
+  "price": 248000,
+  "old_price": 359400,
+  "discount_pct": 31,
+  "rating": 4.6,
+  "reviews": 86,
+  "sold": 36,
+  "stock": 9,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "smartphone",
+   "android",
+   "amoled",
+   "fast charging"
+  ],
+  "specs": {
+   "Display": "6.67\" AMOLED 120Hz",
+   "Battery": "5000mAh",
+   "Charging": "33W fast",
+   "Storage": "256GB / 8GB RAM"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "Xiaomi brings the Xiaomi Redmi Note 13 256GB to Phones & Tablets shoppers who want it is a straightforward upgrade that does not need extra accessories. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 224,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0005",
+  "slug": "apple-iphone-13-128gb",
+  "title": "Apple iPhone 13 128GB",
+  "brand": "Apple",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Smartphones",
+  "price": 725000,
+  "old_price": 979700,
+  "discount_pct": 26,
+  "rating": 3.9,
+  "reviews": 293,
+  "sold": 1109,
+  "stock": 53,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "smartphone",
+   "ios",
+   "premium",
+   "5g",
+   "camera"
+  ],
+  "specs": {
+   "Display": "6.1\" Super Retina XDR",
+   "Chip": "A15 Bionic",
+   "Camera": "Dual 12MP",
+   "Storage": "128GB"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "Apple brings the Apple iPhone 13 128GB to Phones & Tablets shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 135,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0006",
+  "slug": "samsung-galaxy-tab-a9-64gb",
+  "title": "Samsung Galaxy Tab A9+ 64GB",
+  "brand": "Samsung",
+  "category": "phones-tablets",
+  "category_label": "Phones & Tablets",
+  "subcategory": "Tablets",
+  "price": 315000,
+  "old_price": 335100,
+  "discount_pct": 6,
+  "rating": 4.0,
+  "reviews": 229,
+  "sold": 447,
+  "stock": 4,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "tablet",
+   "android",
+   "wifi",
+   "streaming"
+  ],
+  "specs": {
+   "Display": "11\" TFT 90Hz",
+   "Battery": "7040mAh",
+   "Storage": "64GB / 4GB RAM",
+   "Audio": "Quad speakers"
+  },
+  "variants": {
+   "Colour": [
+    "Midnight Black",
+    "Ice Blue",
+    "Mint Green"
+   ],
+   "Storage": [
+    "128GB",
+    "256GB"
+   ]
+  },
+  "description": "A tablets pick from Samsung: the Samsung Galaxy Tab A9+ 64GB pairs buyers consistently mention value for money and fast delivery. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 223,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0007",
+  "slug": "lg-43-smart-led-tv",
+  "title": "LG 43\" Smart LED TV",
+  "brand": "LG",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "Televisions",
+  "price": 385000,
+  "old_price": 583300,
+  "discount_pct": 34,
+  "rating": 4.3,
+  "reviews": 807,
+  "sold": 1253,
+  "stock": 15,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "tv",
+   "smart tv",
+   "4k",
+   "netflix"
+  ],
+  "specs": {
+   "Screen": "43\" LED",
+   "Resolution": "Full HD",
+   "Smart": "webOS",
+   "Ports": "3x HDMI"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "LG brings the LG 43\" Smart LED TV to Electronics shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 178,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0008",
+  "slug": "hisense-55-4k-uhd-smart-tv",
+  "title": "Hisense 55\" 4K UHD Smart TV",
+  "brand": "Hisense",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "Televisions",
+  "price": 520000,
+  "old_price": 712300,
+  "discount_pct": 27,
+  "rating": 4.3,
+  "reviews": 843,
+  "sold": 1849,
+  "stock": 63,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "tv",
+   "smart tv",
+   "4k",
+   "uhd"
+  ],
+  "specs": {
+   "Screen": "55\" UHD",
+   "Resolution": "3840x2160",
+   "Smart": "VIDAA",
+   "HDR": "HDR10"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "The Hisense 55\" 4K UHD Smart TV from Hisense is built for everyday use in Port Harcourt. It is a straightforward upgrade that does not need extra accessories. Backed by a 12-month Hisense warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 28,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0009",
+  "slug": "sony-wh-ch520-wireless-headphones",
+  "title": "Sony WH-CH520 Wireless Headphones",
+  "brand": "Sony",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "Audio",
+  "price": 78000,
+  "old_price": 97500,
+  "discount_pct": 20,
+  "rating": 4.4,
+  "reviews": 285,
+  "sold": 2550,
+  "stock": 119,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "headphones",
+   "bluetooth",
+   "wireless",
+   "audio"
+  ],
+  "specs": {
+   "Battery": "50 hours",
+   "Connectivity": "Bluetooth 5.2",
+   "Type": "On-ear",
+   "Mic": "Built-in"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "Sony brings the Sony WH-CH520 Wireless Headphones to Electronics shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 214,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0010",
+  "slug": "jbl-go-4-bluetooth-speaker",
+  "title": "JBL Go 4 Bluetooth Speaker",
+  "brand": "JBL",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "Audio",
+  "price": 55000,
+  "old_price": 59100,
+  "discount_pct": 7,
+  "rating": 4.1,
+  "reviews": 786,
+  "sold": 1403,
+  "stock": 92,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "speaker",
+   "bluetooth",
+   "portable",
+   "waterproof"
+  ],
+  "specs": {
+   "Output": "4.2W",
+   "Battery": "7 hours",
+   "Rating": "IP67 waterproof",
+   "Connectivity": "Bluetooth 5.3"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A audio pick from JBL: the JBL Go 4 Bluetooth Speaker pairs it is a straightforward upgrade that does not need extra accessories. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 94,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0011",
+  "slug": "oraimo-60w-sound-bar",
+  "title": "Oraimo 60W Sound Bar",
+  "brand": "Oraimo",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "Audio",
+  "price": 96000,
+  "old_price": 111600,
+  "discount_pct": 14,
+  "rating": 4.7,
+  "reviews": 42,
+  "sold": 139,
+  "stock": 23,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "soundbar",
+   "audio",
+   "home theatre",
+   "bluetooth"
+  ],
+  "specs": {
+   "Output": "60W",
+   "Channels": "2.1",
+   "Connectivity": "Bluetooth / HDMI / AUX",
+   "Remote": "Included"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A audio pick from Oraimo: the Oraimo 60W Sound Bar pairs stock moves quickly, so the listed price is the price while it lasts. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 125,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0012",
+  "slug": "dstv-explora-decoder",
+  "title": "DStv Explora Decoder",
+  "brand": "DStv",
+  "category": "electronics",
+  "category_label": "Electronics",
+  "subcategory": "TV Accessories",
+  "price": 88000,
+  "old_price": 102300,
+  "discount_pct": 14,
+  "rating": 4.4,
+  "reviews": 673,
+  "sold": 2633,
+  "stock": 13,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "decoder",
+   "dstv",
+   "satellite",
+   "tv"
+  ],
+  "specs": {
+   "Recording": "Dual-view recording",
+   "Storage": "1TB HDD",
+   "Output": "1080p",
+   "Catch-up": "Yes"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A tv accessories pick from DStv: the DStv Explora Decoder pairs stock moves quickly, so the listed price is the price while it lasts. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 3,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0013",
+  "slug": "hp-250-g9-core-i5-8gb-512gb",
+  "title": "HP 250 G9 Core i5 8GB/512GB",
+  "brand": "HP",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Laptops",
+  "price": 685000,
+  "old_price": 1007400,
+  "discount_pct": 32,
+  "rating": 4.3,
+  "reviews": 411,
+  "sold": 2251,
+  "stock": 47,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "laptop",
+   "windows",
+   "business",
+   "ssd"
+  ],
+  "specs": {
+   "Processor": "Intel Core i5 12th Gen",
+   "Memory": "8GB DDR4",
+   "Storage": "512GB SSD",
+   "Display": "15.6\" FHD"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "The HP 250 G9 Core i5 8GB/512GB from HP is built for everyday use in Lagos. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month HP warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 207,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0014",
+  "slug": "lenovo-ideapad-slim-3-ryzen-5",
+  "title": "Lenovo IdeaPad Slim 3 Ryzen 5",
+  "brand": "Lenovo",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Laptops",
+  "price": 610000,
+  "old_price": 884100,
+  "discount_pct": 31,
+  "rating": 3.7,
+  "reviews": 161,
+  "sold": 1411,
+  "stock": 87,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "laptop",
+   "windows",
+   "student",
+   "ssd"
+  ],
+  "specs": {
+   "Processor": "AMD Ryzen 5 7000",
+   "Memory": "8GB DDR4",
+   "Storage": "512GB SSD",
+   "Display": "15.6\" FHD"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "Lenovo brings the Lenovo IdeaPad Slim 3 Ryzen 5 to Computing shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 183,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0015",
+  "slug": "apple-macbook-air-m2-13",
+  "title": "Apple MacBook Air M2 13\"",
+  "brand": "Apple",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Laptops",
+  "price": 1450000,
+  "old_price": 1812500,
+  "discount_pct": 20,
+  "rating": 4.8,
+  "reviews": 44,
+  "sold": 1043,
+  "stock": 63,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "laptop",
+   "macos",
+   "premium",
+   "lightweight"
+  ],
+  "specs": {
+   "Chip": "Apple M2",
+   "Memory": "8GB unified",
+   "Storage": "256GB SSD",
+   "Battery": "Up to 18 hours"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "The Apple MacBook Air M2 13\" from Apple is built for everyday use in Kano. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month Apple warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 158,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0016",
+  "slug": "dell-24-fhd-ips-monitor",
+  "title": "Dell 24\" FHD IPS Monitor",
+  "brand": "Dell",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Monitors",
+  "price": 175000,
+  "old_price": 216000,
+  "discount_pct": 19,
+  "rating": 4.8,
+  "reviews": 136,
+  "sold": 2831,
+  "stock": 128,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "monitor",
+   "ips",
+   "full hd",
+   "office"
+  ],
+  "specs": {
+   "Screen": "23.8\" IPS",
+   "Resolution": "1920x1080",
+   "Refresh": "75Hz",
+   "Ports": "HDMI / VGA"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "A monitors pick from Dell: the Dell 24\" FHD IPS Monitor pairs expect dependable build quality, honest specifications and spares that are easy to find. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 38,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0017",
+  "slug": "logitech-mk270-wireless-combo",
+  "title": "Logitech MK270 Wireless Combo",
+  "brand": "Logitech",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Accessories",
+  "price": 32000,
+  "old_price": 46400,
+  "discount_pct": 31,
+  "rating": 3.7,
+  "reviews": 638,
+  "sold": 167,
+  "stock": 31,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "keyboard",
+   "mouse",
+   "wireless",
+   "office"
+  ],
+  "specs": {
+   "Type": "Keyboard + mouse",
+   "Connectivity": "2.4GHz wireless",
+   "Battery": "24 months",
+   "Layout": "Full size"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "A accessories pick from Logitech: the Logitech MK270 Wireless Combo pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 183,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0018",
+  "slug": "kingston-1tb-nvme-ssd",
+  "title": "Kingston 1TB NVMe SSD",
+  "brand": "Kingston",
+  "category": "computing",
+  "category_label": "Computing",
+  "subcategory": "Storage",
+  "price": 118000,
+  "old_price": 138800,
+  "discount_pct": 15,
+  "rating": 4.2,
+  "reviews": 933,
+  "sold": 2239,
+  "stock": 33,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "ssd",
+   "storage",
+   "nvme",
+   "upgrade"
+  ],
+  "specs": {
+   "Capacity": "1TB",
+   "Interface": "NVMe PCIe 4.0",
+   "Read": "Up to 3500MB/s",
+   "Form": "M.2 2280"
+  },
+  "variants": {
+   "Memory": [
+    "8GB",
+    "16GB"
+   ],
+   "Storage": [
+    "256GB SSD",
+    "512GB SSD",
+    "1TB SSD"
+   ]
+  },
+  "description": "A storage pick from Kingston: the Kingston 1TB NVMe SSD pairs it is a straightforward upgrade that does not need extra accessories. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 159,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0019",
+  "slug": "philips-2-in-1-blender-600w",
+  "title": "Philips 2-in-1 Blender 600W",
+  "brand": "Philips",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Kitchen Appliances",
+  "price": 89000,
+  "old_price": 93700,
+  "discount_pct": 5,
+  "rating": 4.5,
+  "reviews": 605,
+  "sold": 290,
+  "stock": 39,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "blender",
+   "kitchen",
+   "600w",
+   "smoothie"
+  ],
+  "specs": {
+   "Power": "600W",
+   "Capacity": "2L jar",
+   "Speeds": "2 + pulse",
+   "Blades": "Stainless steel"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "Philips brings the Philips 2-in-1 Blender 600W to Home & Kitchen shoppers who want stock moves quickly, so the listed price is the price while it lasts. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 110,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0020",
+  "slug": "tower-non-stick-cookware-set-10pc",
+  "title": "Tower Non-Stick Cookware Set 10pc",
+  "brand": "Tower",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Cookware",
+  "price": 125000,
+  "old_price": 160300,
+  "discount_pct": 22,
+  "rating": 4.4,
+  "reviews": 498,
+  "sold": 933,
+  "stock": 121,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "cookware",
+   "non-stick",
+   "pots",
+   "kitchen"
+  ],
+  "specs": {
+   "Pieces": "10",
+   "Coating": "Non-stick",
+   "Base": "Induction ready",
+   "Material": "Aluminium"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "Tower brings the Tower Non-Stick Cookware Set 10pc to Home & Kitchen shoppers who want it is a straightforward upgrade that does not need extra accessories. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 25,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0021",
+  "slug": "scanfrost-4-burner-gas-cooker",
+  "title": "Scanfrost 4-Burner Gas Cooker",
+  "brand": "Scanfrost",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Kitchen Appliances",
+  "price": 315000,
+  "old_price": 414500,
+  "discount_pct": 24,
+  "rating": 3.6,
+  "reviews": 703,
+  "sold": 779,
+  "stock": 112,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "gas cooker",
+   "kitchen",
+   "oven",
+   "4 burner"
+  ],
+  "specs": {
+   "Burners": "4",
+   "Oven": "With grill",
+   "Ignition": "Auto",
+   "Stand": "Included"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "A kitchen appliances pick from Scanfrost: the Scanfrost 4-Burner Gas Cooker pairs stock moves quickly, so the listed price is the price while it lasts. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 135,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0022",
+  "slug": "4-seater-dining-table-set",
+  "title": "4-Seater Dining Table Set",
+  "brand": "Socratic Basics",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Furniture",
+  "price": 245000,
+  "old_price": 306200,
+  "discount_pct": 20,
+  "rating": 3.7,
+  "reviews": 881,
+  "sold": 346,
+  "stock": 81,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "dining",
+   "furniture",
+   "table",
+   "chairs"
+  ],
+  "specs": {
+   "Seats": "4",
+   "Material": "Engineered wood",
+   "Finish": "Walnut",
+   "Assembly": "Flat pack"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "A furniture pick from Socratic Basics: the 4-Seater Dining Table Set pairs expect dependable build quality, honest specifications and spares that are easy to find. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 25,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0023",
+  "slug": "memory-foam-pillow-2-pack",
+  "title": "Memory Foam Pillow 2-Pack",
+  "brand": "Socratic Basics",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Bedding",
+  "price": 38000,
+  "old_price": 45200,
+  "discount_pct": 16,
+  "rating": 4.5,
+  "reviews": 652,
+  "sold": 2989,
+  "stock": 126,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "pillow",
+   "memory foam",
+   "bedding",
+   "sleep"
+  ],
+  "specs": {
+   "Pack": "2 pillows",
+   "Fill": "Memory foam",
+   "Cover": "Washable",
+   "Firmness": "Medium"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "A bedding pick from Socratic Basics: the Memory Foam Pillow 2-Pack pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 19,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0024",
+  "slug": "treated-mosquito-net-double",
+  "title": "Treated Mosquito Net Double",
+  "brand": "Socratic Basics",
+  "category": "home-kitchen",
+  "category_label": "Home & Kitchen",
+  "subcategory": "Bedding",
+  "price": 21500,
+  "old_price": 23400,
+  "discount_pct": 8,
+  "rating": 3.8,
+  "reviews": 275,
+  "sold": 2587,
+  "stock": 46,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "mosquito net",
+   "bedding",
+   "treated",
+   "double"
+  ],
+  "specs": {
+   "Size": "Double",
+   "Treatment": "Insecticide treated",
+   "Shape": "Rectangular",
+   "Frame": "Not required"
+  },
+  "variants": {
+   "Colour": [
+    "Silver",
+    "Black",
+    "Stainless Steel"
+   ]
+  },
+  "description": "The Treated Mosquito Net Double from Socratic Basics is built for everyday use in Lagos. Buyers consistently mention value for money and fast delivery. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 228,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0025",
+  "slug": "lg-200l-chest-freezer",
+  "title": "LG 200L Chest Freezer",
+  "brand": "LG",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Cooling",
+  "price": 425000,
+  "old_price": 607100,
+  "discount_pct": 30,
+  "rating": 4.3,
+  "reviews": 70,
+  "sold": 2858,
+  "stock": 61,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "freezer",
+   "chest freezer",
+   "cooling",
+   "200l"
+  ],
+  "specs": {
+   "Capacity": "200L",
+   "Type": "Chest",
+   "Fast freeze": "Yes",
+   "Lock": "With key"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A cooling pick from LG: the LG 200L Chest Freezer pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 61,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0026",
+  "slug": "haier-thermocool-1-5hp-split-ac",
+  "title": "Haier Thermocool 1.5HP Split AC",
+  "brand": "Haier",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Cooling",
+  "price": 520000,
+  "old_price": 693300,
+  "discount_pct": 25,
+  "rating": 4.5,
+  "reviews": 48,
+  "sold": 1411,
+  "stock": 130,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "air conditioner",
+   "split ac",
+   "cooling",
+   "1.5hp"
+  ],
+  "specs": {
+   "Capacity": "1.5HP",
+   "Type": "Split",
+   "Energy": "Inverter",
+   "Remote": "Included"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "The Haier Thermocool 1.5HP Split AC from Haier is built for everyday use in Lagos. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month Haier warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 6,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0027",
+  "slug": "samsung-7kg-front-load-washer",
+  "title": "Samsung 7kg Front Load Washer",
+  "brand": "Samsung",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Laundry",
+  "price": 615000,
+  "old_price": 683300,
+  "discount_pct": 10,
+  "rating": 4.8,
+  "reviews": 135,
+  "sold": 1999,
+  "stock": 132,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "washing machine",
+   "front load",
+   "laundry",
+   "7kg"
+  ],
+  "specs": {
+   "Capacity": "7kg",
+   "Type": "Front load",
+   "Spin": "1200 rpm",
+   "Programs": "14"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "Samsung brings the Samsung 7kg Front Load Washer to Appliances shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 226,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0028",
+  "slug": "nexus-1-5l-electric-kettle",
+  "title": "Nexus 1.5L Electric Kettle",
+  "brand": "Nexus",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Small Appliances",
+  "price": 28000,
+  "old_price": 40600,
+  "discount_pct": 31,
+  "rating": 3.6,
+  "reviews": 887,
+  "sold": 707,
+  "stock": 64,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "kettle",
+   "electric",
+   "kitchen",
+   "1.5l"
+  ],
+  "specs": {
+   "Capacity": "1.5L",
+   "Power": "1800W",
+   "Body": "Stainless steel",
+   "Cut-off": "Auto"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "The Nexus 1.5L Electric Kettle from Nexus is built for everyday use in Benin City. Expect dependable build quality, honest specifications and spares that are easy to find. Backed by a 12-month Nexus warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 90,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0029",
+  "slug": "binatone-2-0l-air-fryer",
+  "title": "Binatone 2.0L Air Fryer",
+  "brand": "Binatone",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Small Appliances",
+  "price": 96000,
+  "old_price": 115700,
+  "discount_pct": 17,
+  "rating": 3.6,
+  "reviews": 632,
+  "sold": 1767,
+  "stock": 28,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "air fryer",
+   "kitchen",
+   "healthy",
+   "2l"
+  ],
+  "specs": {
+   "Capacity": "2.0L",
+   "Power": "1400W",
+   "Timer": "30 minutes",
+   "Basket": "Non-stick"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A small appliances pick from Binatone: the Binatone 2.0L Air Fryer pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 22,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0030",
+  "slug": "hisense-160l-double-door-fridge",
+  "title": "Hisense 160L Double Door Fridge",
+  "brand": "Hisense",
+  "category": "appliances",
+  "category_label": "Appliances",
+  "subcategory": "Cooling",
+  "price": 480000,
+  "old_price": 539300,
+  "discount_pct": 11,
+  "rating": 4.8,
+  "reviews": 730,
+  "sold": 1857,
+  "stock": 11,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "fridge",
+   "refrigerator",
+   "double door",
+   "cooling"
+  ],
+  "specs": {
+   "Capacity": "160L",
+   "Doors": "2",
+   "Defrost": "Manual",
+   "Shelves": "Tempered glass"
+  },
+  "variants": {
+   "Warranty": [
+    "1 year",
+    "2 years"
+   ]
+  },
+  "description": "A cooling pick from Hisense: the Hisense 160L Double Door Fridge pairs stock moves quickly, so the listed price is the price while it lasts. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 205,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0031",
+  "slug": "nivea-nourishing-body-lotion-400ml",
+  "title": "Nivea Nourishing Body Lotion 400ml",
+  "brand": "Nivea",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Body Care",
+  "price": 12500,
+  "old_price": 14000,
+  "discount_pct": 11,
+  "rating": 4.1,
+  "reviews": 657,
+  "sold": 569,
+  "stock": 56,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "lotion",
+   "body care",
+   "moisturiser",
+   "dry skin"
+  ],
+  "specs": {
+   "Size": "400ml",
+   "Skin": "Dry to normal",
+   "SPF": "None",
+   "Type": "Lotion"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "Nivea brings the Nivea Nourishing Body Lotion 400ml to Health & Beauty shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 166,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0032",
+  "slug": "cerave-hydrating-cleanser-473ml",
+  "title": "CeraVe Hydrating Cleanser 473ml",
+  "brand": "CeraVe",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Skincare",
+  "price": 34000,
+  "old_price": 37400,
+  "discount_pct": 9,
+  "rating": 4.0,
+  "reviews": 903,
+  "sold": 2333,
+  "stock": 61,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "MegaMart NG",
+  "tags": [
+   "cleanser",
+   "skincare",
+   "hydrating",
+   "ceramides"
+  ],
+  "specs": {
+   "Size": "473ml",
+   "Skin": "Sensitive",
+   "Key": "Ceramides + HA",
+   "Fragrance": "Free"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "The CeraVe Hydrating Cleanser 473ml from CeraVe is built for everyday use in Lagos. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 6-month CeraVe warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 240,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0033",
+  "slug": "the-ordinary-niacinamide-10-serum",
+  "title": "The Ordinary Niacinamide 10% Serum",
+  "brand": "The Ordinary",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Skincare",
+  "price": 18500,
+  "old_price": 19500,
+  "discount_pct": 5,
+  "rating": 4.9,
+  "reviews": 324,
+  "sold": 289,
+  "stock": 112,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "serum",
+   "niacinamide",
+   "skincare",
+   "pores"
+  ],
+  "specs": {
+   "Size": "30ml",
+   "Active": "Niacinamide 10% + Zinc",
+   "Concern": "Pores and oil",
+   "Texture": "Light"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "The Ordinary brings the The Ordinary Niacinamide 10% Serum to Health & Beauty shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 156,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0034",
+  "slug": "gillette-fusion5-razor-kit",
+  "title": "Gillette Fusion5 Razor Kit",
+  "brand": "Gillette",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Grooming",
+  "price": 26000,
+  "old_price": 34200,
+  "discount_pct": 24,
+  "rating": 4.1,
+  "reviews": 792,
+  "sold": 934,
+  "stock": 93,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "MegaMart NG",
+  "tags": [
+   "razor",
+   "grooming",
+   "shaving",
+   "men"
+  ],
+  "specs": {
+   "Blades": "5",
+   "Handle": "Ergonomic",
+   "Refills": "1 included",
+   "Lubrication": "Strip"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "Gillette brings the Gillette Fusion5 Razor Kit to Health & Beauty shoppers who want stock moves quickly, so the listed price is the price while it lasts. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 60,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0035",
+  "slug": "oral-b-vitality-electric-toothbrush",
+  "title": "Oral-B Vitality Electric Toothbrush",
+  "brand": "Oral-B",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Oral Care",
+  "price": 42000,
+  "old_price": 45700,
+  "discount_pct": 8,
+  "rating": 3.6,
+  "reviews": 527,
+  "sold": 1621,
+  "stock": 47,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "toothbrush",
+   "electric",
+   "oral care",
+   "rechargeable"
+  ],
+  "specs": {
+   "Type": "Rechargeable",
+   "Head": "Round",
+   "Timer": "2 minute",
+   "Modes": "1"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "A oral care pick from Oral-B: the Oral-B Vitality Electric Toothbrush pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 6-month warranty.",
+  "created_days_ago": 214,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0036",
+  "slug": "maybelline-fit-me-foundation",
+  "title": "Maybelline Fit Me Foundation",
+  "brand": "Maybelline",
+  "category": "health-beauty",
+  "category_label": "Health & Beauty",
+  "subcategory": "Makeup",
+  "price": 15500,
+  "old_price": 17200,
+  "discount_pct": 10,
+  "rating": 4.9,
+  "reviews": 612,
+  "sold": 2781,
+  "stock": 79,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "foundation",
+   "makeup",
+   "face",
+   "matte"
+  ],
+  "specs": {
+   "Finish": "Matte + poreless",
+   "Coverage": "Medium",
+   "Shades": "Multiple",
+   "Volume": "30ml"
+  },
+  "variants": {
+   "Size": [
+    "Standard",
+    "Value Pack"
+   ]
+  },
+  "description": "Maybelline brings the Maybelline Fit Me Foundation to Health & Beauty shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 175,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0037",
+  "slug": "men-s-slim-fit-oxford-shirt",
+  "title": "Men's Slim Fit Oxford Shirt",
+  "brand": "Socratic Basics",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Menswear",
+  "price": 18500,
+  "old_price": 20300,
+  "discount_pct": 9,
+  "rating": 3.6,
+  "reviews": 126,
+  "sold": 335,
+  "stock": 14,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "shirt",
+   "men",
+   "formal",
+   "cotton"
+  ],
+  "specs": {
+   "Fit": "Slim",
+   "Fabric": "Cotton blend",
+   "Collar": "Button-down",
+   "Care": "Machine wash"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "The Men's Slim Fit Oxford Shirt from Socratic Basics is built for everyday use in Abuja. Expect dependable build quality, honest specifications and spares that are easy to find. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 182,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0038",
+  "slug": "women-s-ankara-print-maxi-dress",
+  "title": "Women's Ankara Print Maxi Dress",
+  "brand": "Socratic Basics",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Womenswear",
+  "price": 32000,
+  "old_price": 43200,
+  "discount_pct": 26,
+  "rating": 4.7,
+  "reviews": 856,
+  "sold": 2314,
+  "stock": 98,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "dress",
+   "women",
+   "ankara",
+   "maxi"
+  ],
+  "specs": {
+   "Style": "Maxi",
+   "Print": "Ankara",
+   "Fabric": "Wax cotton",
+   "Fit": "Regular"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "Socratic Basics brings the Women's Ankara Print Maxi Dress to Fashion shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 127,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0039",
+  "slug": "nike-air-zoom-running-shoes",
+  "title": "Nike Air Zoom Running Shoes",
+  "brand": "Nike",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Footwear",
+  "price": 98000,
+  "old_price": 148500,
+  "discount_pct": 34,
+  "rating": 3.6,
+  "reviews": 701,
+  "sold": 1054,
+  "stock": 15,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "MegaMart NG",
+  "tags": [
+   "shoes",
+   "running",
+   "sneakers",
+   "sport"
+  ],
+  "specs": {
+   "Type": "Running",
+   "Cushioning": "Air Zoom",
+   "Upper": "Mesh",
+   "Sizes": "40-46"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "A footwear pick from Nike: the Nike Air Zoom Running Shoes pairs expect dependable build quality, honest specifications and spares that are easy to find. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 210,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0040",
+  "slug": "leather-laptop-briefcase",
+  "title": "Leather Laptop Briefcase",
+  "brand": "Socratic Basics",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Bags",
+  "price": 45000,
+  "old_price": 54200,
+  "discount_pct": 17,
+  "rating": 4.7,
+  "reviews": 761,
+  "sold": 210,
+  "stock": 10,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "bag",
+   "briefcase",
+   "leather",
+   "laptop"
+  ],
+  "specs": {
+   "Fits": "Up to 15.6\"",
+   "Material": "PU leather",
+   "Straps": "Shoulder + handle",
+   "Compartments": "3"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "Socratic Basics brings the Leather Laptop Briefcase to Fashion shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 166,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0041",
+  "slug": "unisex-aviator-sunglasses-uv400",
+  "title": "Unisex Aviator Sunglasses UV400",
+  "brand": "Socratic Basics",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Accessories",
+  "price": 12000,
+  "old_price": 17100,
+  "discount_pct": 30,
+  "rating": 4.6,
+  "reviews": 498,
+  "sold": 327,
+  "stock": 19,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "sunglasses",
+   "unisex",
+   "uv400",
+   "aviator"
+  ],
+  "specs": {
+   "Lens": "UV400",
+   "Frame": "Metal",
+   "Style": "Aviator",
+   "Case": "Included"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "The Unisex Aviator Sunglasses UV400 from Socratic Basics is built for everyday use in Benin City. It is one of the most reviewed options in its price band this month. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 74,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0042",
+  "slug": "men-s-classic-leather-wristwatch",
+  "title": "Men's Classic Leather Wristwatch",
+  "brand": "Socratic Basics",
+  "category": "fashion",
+  "category_label": "Fashion",
+  "subcategory": "Watches",
+  "price": 38000,
+  "old_price": 44700,
+  "discount_pct": 15,
+  "rating": 4.5,
+  "reviews": 543,
+  "sold": 2307,
+  "stock": 77,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "watch",
+   "men",
+   "leather",
+   "classic"
+  ],
+  "specs": {
+   "Movement": "Quartz",
+   "Strap": "Leather",
+   "Water": "30m",
+   "Dial": "Analogue"
+  },
+  "variants": {
+   "Size": [
+    "S",
+    "M",
+    "L",
+    "XL"
+   ],
+   "Colour": [
+    "Black",
+    "Navy",
+    "Beige"
+   ]
+  },
+  "description": "The Men's Classic Leather Wristwatch from Socratic Basics is built for everyday use in Port Harcourt. Buyers consistently mention value for money and fast delivery. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 62,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0043",
+  "slug": "pampers-baby-dry-diapers-jumbo",
+  "title": "Pampers Baby Dry Diapers Jumbo",
+  "brand": "Pampers",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Diapering",
+  "price": 28500,
+  "old_price": 33500,
+  "discount_pct": 15,
+  "rating": 4.1,
+  "reviews": 678,
+  "sold": 404,
+  "stock": 55,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "diapers",
+   "baby",
+   "jumbo",
+   "baby dry"
+  ],
+  "specs": {
+   "Size": "Midi (4)",
+   "Count": "68",
+   "Absorbency": "12 hours",
+   "Type": "Tape"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "A diapering pick from Pampers: the Pampers Baby Dry Diapers Jumbo pairs buyers consistently mention value for money and fast delivery. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 98,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0044",
+  "slug": "chicco-lightweight-baby-stroller",
+  "title": "Chicco Lightweight Baby Stroller",
+  "brand": "Chicco",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Gear",
+  "price": 185000,
+  "old_price": 280300,
+  "discount_pct": 34,
+  "rating": 4.3,
+  "reviews": 659,
+  "sold": 2860,
+  "stock": 72,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "stroller",
+   "baby",
+   "lightweight",
+   "travel"
+  ],
+  "specs": {
+   "Weight": "7.5kg",
+   "Folding": "Compact",
+   "Recline": "Multi-position",
+   "Canopy": "With sun visor"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "The Chicco Lightweight Baby Stroller from Chicco is built for everyday use in Benin City. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month Chicco warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 209,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0045",
+  "slug": "philips-avent-anti-colic-bottle-260ml",
+  "title": "Philips Avent Anti-Colic Bottle 260ml",
+  "brand": "Philips Avent",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Feeding",
+  "price": 16500,
+  "old_price": 18500,
+  "discount_pct": 11,
+  "rating": 4.6,
+  "reviews": 684,
+  "sold": 2580,
+  "stock": 117,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "bottle",
+   "feeding",
+   "anti-colic",
+   "baby"
+  ],
+  "specs": {
+   "Volume": "260ml",
+   "Teat": "Anti-colic",
+   "Material": "BPA free",
+   "Age": "0m+"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "The Philips Avent Anti-Colic Bottle 260ml from Philips Avent is built for everyday use in Abuja. It is a straightforward upgrade that does not need extra accessories. Backed by a 12-month Philips Avent warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 165,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0046",
+  "slug": "johnson-s-baby-bath-500ml",
+  "title": "Johnson's Baby Bath 500ml",
+  "brand": "Johnson's",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Baby Care",
+  "price": 9800,
+  "old_price": 11800,
+  "discount_pct": 17,
+  "rating": 4.1,
+  "reviews": 877,
+  "sold": 1047,
+  "stock": 15,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "baby bath",
+   "baby",
+   "gentle",
+   "500ml"
+  ],
+  "specs": {
+   "Size": "500ml",
+   "Formula": "No more tears",
+   "Skin": "Sensitive",
+   "Type": "Wash"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "Johnson's brings the Johnson's Baby Bath 500ml to Baby Products shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 187,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0047",
+  "slug": "graco-convertible-car-seat",
+  "title": "Graco Convertible Car Seat",
+  "brand": "Graco",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Safety",
+  "price": 245000,
+  "old_price": 266300,
+  "discount_pct": 8,
+  "rating": 4.9,
+  "reviews": 54,
+  "sold": 543,
+  "stock": 26,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "car seat",
+   "baby",
+   "safety",
+   "convertible"
+  ],
+  "specs": {
+   "Group": "0+/1/2",
+   "Install": "ISOFIX + belt",
+   "Recline": "5 positions",
+   "Harness": "5-point"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "Graco brings the Graco Convertible Car Seat to Baby Products shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 225,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0048",
+  "slug": "baby-wipes-sensitive-4-pack",
+  "title": "Baby Wipes Sensitive 4-Pack",
+  "brand": "Socratic Basics",
+  "category": "baby-products",
+  "category_label": "Baby Products",
+  "subcategory": "Diapering",
+  "price": 7500,
+  "old_price": 7900,
+  "discount_pct": 5,
+  "rating": 4.7,
+  "reviews": 710,
+  "sold": 808,
+  "stock": 76,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "wipes",
+   "baby",
+   "sensitive",
+   "4 pack"
+  ],
+  "specs": {
+   "Packs": "4 x 80",
+   "Formula": "Fragrance free",
+   "Skin": "Newborn",
+   "Type": "Wipes"
+  },
+  "variants": {
+   "Size": [
+    "Newborn",
+    "0-6 months",
+    "6-12 months"
+   ]
+  },
+  "description": "A diapering pick from Socratic Basics: the Baby Wipes Sensitive 4-Pack pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 167,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0049",
+  "slug": "golden-penny-semovita-2kg",
+  "title": "Golden Penny Semovita 2kg",
+  "brand": "Golden Penny",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Pantry",
+  "price": 6800,
+  "old_price": 8200,
+  "discount_pct": 17,
+  "rating": 4.8,
+  "reviews": 624,
+  "sold": 1328,
+  "stock": 15,
+  "express": false,
+  "warranty_months": 0,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "semovita",
+   "swallow",
+   "pantry",
+   "2kg"
+  ],
+  "specs": {
+   "Weight": "2kg",
+   "Type": "Semolina",
+   "Shelf life": "12 months",
+   "Packaging": "Sealed bag"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "The Golden Penny Semovita 2kg from Golden Penny is built for everyday use in Benin City. It is a straightforward upgrade that does not need extra accessories. Backed by a 6-month Golden Penny warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 152,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0050",
+  "slug": "indomie-instant-noodles-carton",
+  "title": "Indomie Instant Noodles Carton",
+  "brand": "Indomie",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Pantry",
+  "price": 12500,
+  "old_price": 14500,
+  "discount_pct": 14,
+  "rating": 4.0,
+  "reviews": 106,
+  "sold": 2934,
+  "stock": 83,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Verified Partner",
+  "tags": [
+   "noodles",
+   "indomie",
+   "carton",
+   "instant"
+  ],
+  "specs": {
+   "Packs": "40 x 70g",
+   "Flavour": "Chicken",
+   "Type": "Instant",
+   "Carton": "Yes"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "A pantry pick from Indomie: the Indomie Instant Noodles Carton pairs it is a straightforward upgrade that does not need extra accessories. It ships from a verified seller and includes a 6-month warranty.",
+  "created_days_ago": 94,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0051",
+  "slug": "peak-milk-powder-400g",
+  "title": "Peak Milk Powder 400g",
+  "brand": "Peak",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Beverages",
+  "price": 7200,
+  "old_price": 9100,
+  "discount_pct": 21,
+  "rating": 3.8,
+  "reviews": 576,
+  "sold": 1233,
+  "stock": 85,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "milk",
+   "powder",
+   "beverages",
+   "400g"
+  ],
+  "specs": {
+   "Weight": "400g tin",
+   "Type": "Full cream",
+   "Fortified": "Vitamin A + D",
+   "Shelf life": "18 months"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "The Peak Milk Powder 400g from Peak is built for everyday use in Benin City. It is a straightforward upgrade that does not need extra accessories. Backed by a 6-month Peak warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 40,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0052",
+  "slug": "dangote-refined-sugar-1kg",
+  "title": "Dangote Refined Sugar 1kg",
+  "brand": "Dangote",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Pantry",
+  "price": 2400,
+  "old_price": 3200,
+  "discount_pct": 25,
+  "rating": 4.5,
+  "reviews": 206,
+  "sold": 2487,
+  "stock": 16,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Verified Partner",
+  "tags": [
+   "sugar",
+   "dangote",
+   "pantry",
+   "1kg"
+  ],
+  "specs": {
+   "Weight": "1kg",
+   "Type": "Refined white",
+   "Packaging": "Sealed",
+   "Origin": "Nigeria"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "The Dangote Refined Sugar 1kg from Dangote is built for everyday use in Ibadan. It is one of the most reviewed options in its price band this month. Backed by a 6-month Dangote warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 79,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0053",
+  "slug": "coca-cola-50cl-pack-of-12",
+  "title": "Coca-Cola 50cl Pack of 12",
+  "brand": "Coca-Cola",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Beverages",
+  "price": 6500,
+  "old_price": 7300,
+  "discount_pct": 11,
+  "rating": 3.6,
+  "reviews": 709,
+  "sold": 394,
+  "stock": 45,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "coca cola",
+   "soft drink",
+   "beverages",
+   "12 pack"
+  ],
+  "specs": {
+   "Volume": "50cl x 12",
+   "Type": "Carbonated",
+   "Serve": "Chilled",
+   "Packaging": "PET"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "The Coca-Cola 50cl Pack of 12 from Coca-Cola is built for everyday use in Kano. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 6-month Coca-Cola warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 184,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0054",
+  "slug": "pure-heaven-vegetable-oil-5l",
+  "title": "Pure Heaven Vegetable Oil 5L",
+  "brand": "Pure Heaven",
+  "category": "grocery",
+  "category_label": "Grocery",
+  "subcategory": "Pantry",
+  "price": 14500,
+  "old_price": 17500,
+  "discount_pct": 17,
+  "rating": 4.5,
+  "reviews": 254,
+  "sold": 2018,
+  "stock": 70,
+  "express": true,
+  "warranty_months": 0,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "oil",
+   "vegetable oil",
+   "cooking",
+   "5l"
+  ],
+  "specs": {
+   "Volume": "5 litres",
+   "Type": "Refined vegetable",
+   "Cholesterol": "Free",
+   "Packaging": "Jerry can"
+  },
+  "variants": {
+   "Pack": [
+    "Single",
+    "Pack of 3",
+    "Carton"
+   ]
+  },
+  "description": "A pantry pick from Pure Heaven: the Pure Heaven Vegetable Oil 5L pairs expect dependable build quality, honest specifications and spares that are easy to find. It ships from a verified seller and includes a 6-month warranty.",
+  "created_days_ago": 188,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0055",
+  "slug": "adjustable-dumbbell-set-20kg",
+  "title": "Adjustable Dumbbell Set 20kg",
+  "brand": "Socratic Basics",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Fitness",
+  "price": 78000,
+  "old_price": 111400,
+  "discount_pct": 30,
+  "rating": 3.8,
+  "reviews": 92,
+  "sold": 2698,
+  "stock": 17,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "dumbbell",
+   "fitness",
+   "weights",
+   "home gym"
+  ],
+  "specs": {
+   "Total": "20kg",
+   "Type": "Adjustable",
+   "Plates": "Coated",
+   "Bar": "Chrome"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "Socratic Basics brings the Adjustable Dumbbell Set 20kg to Sporting Goods shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 73,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0056",
+  "slug": "yoga-mat-non-slip-6mm",
+  "title": "Yoga Mat Non-Slip 6mm",
+  "brand": "Socratic Basics",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Fitness",
+  "price": 18500,
+  "old_price": 27600,
+  "discount_pct": 33,
+  "rating": 4.5,
+  "reviews": 112,
+  "sold": 3042,
+  "stock": 63,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "yoga mat",
+   "fitness",
+   "non-slip",
+   "6mm"
+  ],
+  "specs": {
+   "Thickness": "6mm",
+   "Surface": "Non-slip",
+   "Size": "183 x 61cm",
+   "Strap": "Included"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "The Yoga Mat Non-Slip 6mm from Socratic Basics is built for everyday use in Abuja. Buyers consistently mention value for money and fast delivery. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 3,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0057",
+  "slug": "adidas-football-size-5",
+  "title": "Adidas Football Size 5",
+  "brand": "Adidas",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Outdoor",
+  "price": 24500,
+  "old_price": 26600,
+  "discount_pct": 8,
+  "rating": 4.1,
+  "reviews": 396,
+  "sold": 906,
+  "stock": 40,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "football",
+   "adidas",
+   "outdoor",
+   "size 5"
+  ],
+  "specs": {
+   "Size": "5",
+   "Construction": "Machine stitched",
+   "Cover": "TPU",
+   "Use": "Training"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "Adidas brings the Adidas Football Size 5 to Sporting Goods shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 13,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0058",
+  "slug": "mountain-bike-26-21-speed",
+  "title": "Mountain Bike 26\" 21-Speed",
+  "brand": "Socratic Basics",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Cycling",
+  "price": 285000,
+  "old_price": 320200,
+  "discount_pct": 11,
+  "rating": 4.6,
+  "reviews": 209,
+  "sold": 1906,
+  "stock": 58,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "bike",
+   "cycling",
+   "mountain bike",
+   "21 speed"
+  ],
+  "specs": {
+   "Wheels": "26\"",
+   "Gears": "21-speed",
+   "Brakes": "Disc",
+   "Frame": "Steel hardtail"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "The Mountain Bike 26\" 21-Speed from Socratic Basics is built for everyday use in Ibadan. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 184,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0059",
+  "slug": "resistance-bands-set-5pc",
+  "title": "Resistance Bands Set 5pc",
+  "brand": "Socratic Basics",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Fitness",
+  "price": 12500,
+  "old_price": 13300,
+  "discount_pct": 6,
+  "rating": 4.2,
+  "reviews": 763,
+  "sold": 1120,
+  "stock": 111,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "resistance bands",
+   "fitness",
+   "home gym",
+   "5pc"
+  ],
+  "specs": {
+   "Pieces": "5 bands",
+   "Levels": "Light to extra heavy",
+   "Material": "Latex",
+   "Anchors": "Door + handles"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "A fitness pick from Socratic Basics: the Resistance Bands Set 5pc pairs buyers consistently mention value for money and fast delivery. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 238,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0060",
+  "slug": "camping-tent-4-person-waterproof",
+  "title": "Camping Tent 4-Person Waterproof",
+  "brand": "Socratic Basics",
+  "category": "sporting-goods",
+  "category_label": "Sporting Goods",
+  "subcategory": "Outdoor",
+  "price": 96000,
+  "old_price": 139100,
+  "discount_pct": 31,
+  "rating": 4.8,
+  "reviews": 493,
+  "sold": 1830,
+  "stock": 18,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "tent",
+   "camping",
+   "outdoor",
+   "4 person"
+  ],
+  "specs": {
+   "Sleeps": "4",
+   "Waterproof": "2000mm",
+   "Poles": "Fibreglass",
+   "Bag": "Carry bag included"
+  },
+  "variants": {
+   "Colour": [
+    "Black",
+    "Grey",
+    "Blue"
+   ]
+  },
+  "description": "The Camping Tent 4-Person Waterproof from Socratic Basics is built for everyday use in Kano. It is one of the most reviewed options in its price band this month. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 64,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0061",
+  "slug": "sony-playstation-5-slim-console",
+  "title": "Sony PlayStation 5 Slim Console",
+  "brand": "Sony",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Consoles",
+  "price": 950000,
+  "old_price": 1250000,
+  "discount_pct": 24,
+  "rating": 4.3,
+  "reviews": 725,
+  "sold": 2936,
+  "stock": 98,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "playstation",
+   "console",
+   "ps5",
+   "gaming"
+  ],
+  "specs": {
+   "Storage": "1TB SSD",
+   "Resolution": "Up to 4K 120Hz",
+   "Controller": "DualSense",
+   "Edition": "Disc"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "A consoles pick from Sony: the Sony PlayStation 5 Slim Console pairs it is one of the most reviewed options in its price band this month. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 163,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0062",
+  "slug": "xbox-series-s-512gb",
+  "title": "Xbox Series S 512GB",
+  "brand": "Microsoft",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Consoles",
+  "price": 585000,
+  "old_price": 664800,
+  "discount_pct": 12,
+  "rating": 4.0,
+  "reviews": 488,
+  "sold": 1355,
+  "stock": 46,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "xbox",
+   "console",
+   "gaming",
+   "digital"
+  ],
+  "specs": {
+   "Storage": "512GB SSD",
+   "Resolution": "1440p",
+   "Edition": "All-digital",
+   "Controller": "Wireless"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "Microsoft brings the Xbox Series S 512GB to Video Games shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 129,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0063",
+  "slug": "dualsense-wireless-controller",
+  "title": "DualSense Wireless Controller",
+  "brand": "Sony",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Controllers",
+  "price": 95000,
+  "old_price": 100000,
+  "discount_pct": 5,
+  "rating": 3.9,
+  "reviews": 200,
+  "sold": 361,
+  "stock": 136,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Verified Partner",
+  "tags": [
+   "controller",
+   "ps5",
+   "wireless",
+   "gaming"
+  ],
+  "specs": {
+   "Haptics": "Adaptive triggers",
+   "Battery": "Rechargeable",
+   "Connectivity": "Bluetooth",
+   "Extras": "Motion + speaker"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "The DualSense Wireless Controller from Sony is built for everyday use in Port Harcourt. Buyers consistently mention value for money and fast delivery. Backed by a 12-month Sony warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 43,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0064",
+  "slug": "ea-sports-fc-24-ps5",
+  "title": "EA Sports FC 24 (PS5)",
+  "brand": "EA Sports",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Games",
+  "price": 62000,
+  "old_price": 83800,
+  "discount_pct": 26,
+  "rating": 4.9,
+  "reviews": 203,
+  "sold": 422,
+  "stock": 104,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "game",
+   "football",
+   "ps5",
+   "sports"
+  ],
+  "specs": {
+   "Platform": "PS5",
+   "Genre": "Sports",
+   "Players": "1-4 local",
+   "Online": "Yes"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "EA Sports brings the EA Sports FC 24 (PS5) to Video Games shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 3,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0065",
+  "slug": "nintendo-switch-oled",
+  "title": "Nintendo Switch OLED",
+  "brand": "Nintendo",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Consoles",
+  "price": 620000,
+  "old_price": 738100,
+  "discount_pct": 16,
+  "rating": 4.7,
+  "reviews": 522,
+  "sold": 2189,
+  "stock": 20,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Naija Best Buys",
+  "tags": [
+   "nintendo",
+   "console",
+   "handheld",
+   "gaming"
+  ],
+  "specs": {
+   "Screen": "7\" OLED",
+   "Storage": "64GB",
+   "Modes": "TV / tabletop / handheld",
+   "Joy-Con": "Included"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "A consoles pick from Nintendo: the Nintendo Switch OLED pairs buyers consistently mention value for money and fast delivery. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 87,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0066",
+  "slug": "gaming-headset-7-1-surround",
+  "title": "Gaming Headset 7.1 Surround",
+  "brand": "Socratic Basics",
+  "category": "video-games",
+  "category_label": "Video Games",
+  "subcategory": "Accessories",
+  "price": 48000,
+  "old_price": 53300,
+  "discount_pct": 10,
+  "rating": 4.6,
+  "reviews": 936,
+  "sold": 1112,
+  "stock": 82,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "headset",
+   "gaming",
+   "7.1",
+   "microphone"
+  ],
+  "specs": {
+   "Audio": "7.1 surround",
+   "Mic": "Noise cancelling",
+   "Connectivity": "USB + 3.5mm",
+   "Lighting": "RGB"
+  },
+  "variants": {
+   "Edition": [
+    "Standard",
+    "Deluxe"
+   ]
+  },
+  "description": "Socratic Basics brings the Gaming Headset 7.1 Surround to Video Games shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 53,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0067",
+  "slug": "car-dash-camera-1080p-dual",
+  "title": "Car Dash Camera 1080P Dual",
+  "brand": "Socratic Basics",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "In-Car Electronics",
+  "price": 68000,
+  "old_price": 72300,
+  "discount_pct": 6,
+  "rating": 3.8,
+  "reviews": 276,
+  "sold": 217,
+  "stock": 120,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "TopChoice Retail",
+  "tags": [
+   "dash cam",
+   "car",
+   "1080p",
+   "recording"
+  ],
+  "specs": {
+   "Resolution": "1080P dual",
+   "View": "170 degrees",
+   "Storage": "Up to 64GB",
+   "Night": "IR night vision"
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "The Car Dash Camera 1080P Dual from Socratic Basics is built for everyday use in Port Harcourt. Stock moves quickly, so the listed price is the price while it lasts. Backed by a 12-month Socratic Basics warranty and eligible for pay-on-delivery.",
+  "created_days_ago": 152,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0068",
+  "slug": "michelin-tyre-205-55r16",
+  "title": "Michelin Tyre 205/55R16",
+  "brand": "Michelin",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "Tyres",
+  "price": 92000,
+  "old_price": 137300,
+  "discount_pct": 33,
+  "rating": 4.2,
+  "reviews": 635,
+  "sold": 469,
+  "stock": 70,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "tyre",
+   "michelin",
+   "car",
+   "205/55r16"
+  ],
+  "specs": {
+   "Size": "205/55R16",
+   "Type": "All season",
+   "Load": "91V",
+   "Warranty": "Manufacturer"
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "Michelin brings the Michelin Tyre 205/55R16 to Automotive shoppers who want it is one of the most reviewed options in its price band this month. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 231,
+  "flash": true,
+  "image": null
+ },
+ {
+  "id": "SKU-0069",
+  "slug": "car-vacuum-cleaner-12v",
+  "title": "Car Vacuum Cleaner 12V",
+  "brand": "Socratic Basics",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "Car Care",
+  "price": 22000,
+  "old_price": 31400,
+  "discount_pct": 30,
+  "rating": 4.8,
+  "reviews": 726,
+  "sold": 875,
+  "stock": 29,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "vacuum",
+   "car",
+   "12v",
+   "cleaning"
+  ],
+  "specs": {
+   "Power": "12V DC",
+   "Suction": "High",
+   "Attachments": "3 nozzles",
+   "Filter": "Washable HEPA"
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "A car care pick from Socratic Basics: the Car Vacuum Cleaner 12V pairs expect dependable build quality, honest specifications and spares that are easy to find. It ships from a verified seller and includes a 12-month warranty.",
+  "created_days_ago": 89,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0070",
+  "slug": "bosch-car-battery-60ah",
+  "title": "Bosch Car Battery 60Ah",
+  "brand": "Bosch",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "Batteries",
+  "price": 115000,
+  "old_price": 162000,
+  "discount_pct": 29,
+  "rating": 3.6,
+  "reviews": 657,
+  "sold": 999,
+  "stock": 69,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "battery",
+   "bosch",
+   "car",
+   "60ah"
+  ],
+  "specs": {
+   "Capacity": "60Ah",
+   "CCA": "540A",
+   "Type": "Maintenance free",
+   "Warranty": "18 months"
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "Bosch brings the Bosch Car Battery 60Ah to Automotive shoppers who want expect dependable build quality, honest specifications and spares that are easy to find. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 151,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0071",
+  "slug": "magnetic-car-phone-holder",
+  "title": "Magnetic Car Phone Holder",
+  "brand": "Socratic Basics",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "Accessories",
+  "price": 8500,
+  "old_price": 11500,
+  "discount_pct": 26,
+  "rating": 3.9,
+  "reviews": 889,
+  "sold": 2058,
+  "stock": 60,
+  "express": false,
+  "warranty_months": 12,
+  "seller": "Prime Gadgets NG",
+  "tags": [
+   "phone holder",
+   "car",
+   "magnetic",
+   "accessory"
+  ],
+  "specs": {
+   "Mount": "Dashboard + vent",
+   "Magnets": "6x N52",
+   "Rotation": "360 degrees",
+   "Phones": "Up to 6.9\""
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "Socratic Basics brings the Magnetic Car Phone Holder to Automotive shoppers who want it is a straightforward upgrade that does not need extra accessories. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 51,
+  "flash": false,
+  "image": null
+ },
+ {
+  "id": "SKU-0072",
+  "slug": "total-5w-30-synthetic-engine-oil-5l",
+  "title": "Total 5W-30 Synthetic Engine Oil 5L",
+  "brand": "Total",
+  "category": "automotive",
+  "category_label": "Automotive",
+  "subcategory": "Car Care",
+  "price": 38000,
+  "old_price": 55900,
+  "discount_pct": 32,
+  "rating": 4.5,
+  "reviews": 274,
+  "sold": 443,
+  "stock": 98,
+  "express": true,
+  "warranty_months": 12,
+  "seller": "Socratic Official Store",
+  "tags": [
+   "engine oil",
+   "5w-30",
+   "synthetic",
+   "car"
+  ],
+  "specs": {
+   "Viscosity": "5W-30",
+   "Type": "Fully synthetic",
+   "Volume": "5 litres",
+   "Spec": "API SP"
+  },
+  "variants": {
+   "Position": [
+    "Front",
+    "Rear"
+   ]
+  },
+  "description": "Total brings the Total 5W-30 Synthetic Engine Oil 5L to Automotive shoppers who want buyers consistently mention value for money and fast delivery. Free returns within 7 days if it is not right for you.",
+  "created_days_ago": 131,
+  "flash": true,
+  "image": null
+ }
+]

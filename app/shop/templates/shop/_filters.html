@@ -1,0 +1,94 @@
+{# Filter sidebar, shared by category and search results.
+   Params: action_url, active, facets, hidden_q (optional), hide_category (optional) #}
+
+<form class="filters" method="get" action="{{ action_url }}">
+  {% if hidden_q %}<input type="hidden" name="q" value="{{ hidden_q }}">{% endif %}
+
+  <div class="filter-head">
+    <h2><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg> Filters</h2>
+    <button class="filter-clear" type="button" data-filter-clear>Clear all</button>
+  </div>
+
+  {% if facets %}
+    <fieldset class="filter-group">
+      <legend>Category</legend>
+      <div class="filter-scroll">
+        {% for c in facets.categories %}
+          <label class="check">
+            <input type="radio" name="category" value="{{ c.slug }}"
+                   {% if active.category == c.slug %}checked{% endif %}>
+            <span>{{ c.label }}</span><em>{{ c.count }}</em>
+          </label>
+        {% endfor %}
+        <label class="check">
+          <input type="radio" name="category" value="" {% if not active.category %}checked{% endif %}>
+          <span>All categories</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend>Brand</legend>
+      <div class="filter-scroll">
+        {% for brand, count in facets.brands[:12] %}
+          <label class="check">
+            <input type="checkbox" name="brand" value="{{ brand }}"
+                   {% if brand in active.brands %}checked{% endif %}>
+            <span>{{ brand }}</span><em>{{ count }}</em>
+          </label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend>Price (&#8358;)</legend>
+      <div class="price-inputs">
+        <label>
+          <span class="sr-only">Minimum price</span>
+          <input type="number" name="min_price" min="0" step="1000" placeholder="Min"
+                 value="{{ active.min_price if active.min_price is not none else '' }}">
+        </label>
+        <span class="price-dash" aria-hidden="true">–</span>
+        <label>
+          <span class="sr-only">Maximum price</span>
+          <input type="number" name="max_price" min="0" step="1000" placeholder="Max"
+                 value="{{ active.max_price if active.max_price is not none else '' }}">
+        </label>
+      </div>
+      <div class="price-quick">
+        {% for amount, label in [(25000, 'Under ₦25k'), (100000, 'Under ₦100k'), (500000, 'Under ₦500k')] %}
+          <button class="chip chip-sm" type="button" data-price-max="{{ amount }}">{{ label }}</button>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend>Customer rating</legend>
+      <div class="filter-scroll">
+        {% for value, label in [(4.5, '4.5 & up'), (4.0, '4.0 & up'), (3.5, '3.5 & up')] %}
+          <label class="check">
+            <input type="radio" name="min_rating" value="{{ value }}"
+                   {% if active.min_rating == value %}checked{% endif %}>
+            <span>{{ label|safe }}</span>
+          </label>
+        {% endfor %}
+      </div>
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend>Delivery</legend>
+      <label class="check">
+        <input type="checkbox" name="express" value="1" {% if active.express %}checked{% endif %}>
+        <span>Express eligible only</span>
+      </label>
+      <label class="check">
+        <input type="checkbox" name="flash" value="1" {% if active.flash %}checked{% endif %}>
+        <span>On flash sale</span>
+      </label>
+    </fieldset>
+  {% else %}
+    <p class="filter-empty">No filters to show for this result set.</p>
+  {% endif %}
+
+  <button class="btn btn-primary btn-block" type="submit">Apply filters</button>
+</form>

@@ -1,0 +1,139 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Socratic Shop — Nigeria's marketplace with an AI shopping assistant{% endblock %}
+
+{% block content %}
+
+<section class="hero" aria-label="Highlights">
+  <div class="hero-main" data-carousel>
+    <div class="hero-track" data-carousel-track>
+      {% for s in hero_slides %}
+        <article class="hero-slide" style="--slide-accent: {{ s.accent }}">
+          <div class="hero-copy">
+            <p class="hero-eyebrow">{{ s.eyebrow }}</p>
+            <h1 class="hero-title">{{ s.title }}</h1>
+            <p class="hero-body">{{ s.body }}</p>
+            <a class="btn btn-primary hero-cta" href="{{ s.url }}">
+              {{ s.cta }} <svg class="ico" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+          <span class="hero-art" aria-hidden="true">
+            <svg class="ico" aria-hidden="true">
+              <use href="#i-{{ 'sparkles' if s.glyph == 'assistant' else ('bolt' if s.glyph == 'flash' else 'truck') }}"/>
+            </svg>
+          </span>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="hero-dots" data-carousel-dots role="tablist" aria-label="Highlight slides"></div>
+  </div>
+
+  <aside class="hero-side">
+    <div class="ai-card">
+      <span class="ai-card-badge"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> AI assistant</span>
+      <h2>Shop by describing what you need</h2>
+      <p>Budget, brand or problem — Ama searches the catalogue and explains the trade-offs. No filters required.</p>
+      <div class="ai-prompts">
+        {% for chip in shop_assistant_intro.chips[:3] %}
+          <button class="chip chip-block" type="button" data-assistant-open data-assistant-send="{{ chip }}">
+            {{ chip }}
+          </button>
+        {% endfor %}
+      </div>
+      <button class="btn btn-primary btn-block" type="button" data-assistant-open>
+        <svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Start chatting
+      </button>
+    </div>
+
+    <ul class="trust-list">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> <span><strong>Free delivery</strong> over {{ shop_free_shipping_threshold|naira }}</span></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> <span><strong>Pay on delivery</strong> in major cities</span></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg> <span><strong>7-day returns</strong> on unused items</span></li>
+    </ul>
+  </aside>
+</section>
+
+<section class="block" aria-labelledby="cats-h">
+  {{ m.section_head('Shop by category', 'Twelve departments, ranked by what shoppers browse most.', link=url_for('shop.deals'), link_label='Flash deals', icon='tag') }}
+  <div class="cat-tiles">
+    {% for c in shop_categories %}
+      <a class="cat-tile" href="{{ url_for('shop.category', slug=c.slug) }}" style="--hue: {{ c.hue }}">
+        <span class="cat-tile-mark" aria-hidden="true">{{ c.short[:2] }}</span>
+        <span class="cat-tile-label">{{ c.label }}</span>
+        <span class="cat-tile-count">{{ c.count }} items</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% if flash %}
+<section class="block block-flash" aria-labelledby="flash-h">
+  <header class="section-head">
+    <div>
+      <h2 class="section-title"><svg class="ico section-ico" aria-hidden="true"><use href="#i-bolt"/></svg> Flash sale</h2>
+      <p class="section-sub">Prices drop for a six-hour window, then reset.</p>
+    </div>
+    <div class="countdown" data-countdown="{{ flash_deadline }}">
+      <span class="countdown-label">Ends in</span>
+      <span class="countdown-cell" data-cd-h>--</span><span class="countdown-colon">:</span>
+      <span class="countdown-cell" data-cd-m>--</span><span class="countdown-colon">:</span>
+      <span class="countdown-cell" data-cd-s>--</span>
+    </div>
+  </header>
+  <div class="rail" data-rail>
+    {% for p in flash %}{{ m.product_card(p) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if recently_viewed %}
+<section class="block" aria-labelledby="again-h">
+  {{ m.section_head('Pick up where you left off', 'Your recent views, kept for this session only.', link=url_for('shop.wishlist'), link_label='Your wishlist', icon='refresh') }}
+  <div class="rail">
+    {% for p in recently_viewed %}{{ m.product_card(p, False) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="block" aria-labelledby="foryou-h">
+  {{ m.section_head(
+      'Just for you',
+      'Ranked by a taste profile built from what you have viewed, blended with how the store is selling.' if recently_viewed
+        else 'No browsing history yet, so this shelf falls back to what is trending across the store.',
+      icon='sparkles') }}
+  <p class="reco-note">
+    <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+    {% if recently_viewed %}
+      Showing content-similar products to your last {{ recently_viewed|length }} view{{ '' if recently_viewed|length == 1 else 's' }}.
+    {% else %}
+      View a product and this shelf re-ranks immediately.
+    {% endif %}
+  </p>
+  {{ m.product_grid(for_you) }}
+</section>
+
+<section class="block" aria-labelledby="trending-h">
+  {{ m.section_head('Trending now', 'Popularity decayed by how recently the stock landed.', link=url_for('shop.search', q=''), link_label='Browse everything', icon='bolt') }}
+  <div class="rail">
+    {% for p in trending %}{{ m.product_card(p) }}{% endfor %}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="quality-h">
+  {{ m.section_head('Highest rated', 'Ranked with a Bayesian prior, so a 5.0 from three reviews cannot top a 4.5 from 800.', icon='star') }}
+  <div class="rail">
+    {% for p in quality %}{{ m.product_card(p) }}{% endfor %}
+  </div>
+</section>
+
+<section class="block" aria-labelledby="brands-h">
+  {{ m.section_head('Shop by brand', 'The makers shoppers ask for by name.', icon='store') }}
+  <div class="brand-strip">
+    {% for b in brands %}
+      <a class="brand-chip" href="{{ url_for('shop.search', q=b) }}">{{ b }}</a>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock %}

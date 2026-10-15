@@ -1,0 +1,39 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Flash deals — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Flash deals', None)]) }}
+
+  <section class="deals-hero">
+    <div>
+      <p class="hero-eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-bolt"/></svg> Flash sale</p>
+      <h1>Discounted stock, while it lasts</h1>
+      <p>The window resets every six hours. Prices here are the deepest cuts in the catalogue.</p>
+    </div>
+    <div class="countdown countdown-lg" data-countdown="{{ flash_deadline }}">
+      <span class="countdown-label">Sale ends in</span>
+      <div class="countdown-cells">
+        <span class="countdown-cell" data-cd-h>--</span>
+        <span class="countdown-colon">:</span>
+        <span class="countdown-cell" data-cd-m>--</span>
+        <span class="countdown-colon">:</span>
+        <span class="countdown-cell" data-cd-s>--</span>
+      </div>
+    </div>
+  </section>
+
+  {% if flash %}
+    {{ m.product_grid(flash) }}
+  {% else %}
+    {{ m.empty_state('No flash deals right now', 'Check back shortly — the window resets every six hours.', 'Browse all products', url_for('shop.home'), 'bolt') }}
+  {% endif %}
+
+  {% if trending %}
+    <section class="block">
+      {{ m.section_head('Still trending', 'Top sellers by popularity and freshness.', icon='bolt') }}
+      <div class="rail">{% for p in trending %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endblock %}

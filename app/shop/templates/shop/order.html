@@ -1,0 +1,100 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Order {{ order.ref }} confirmed — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Orders', url_for('shop.orders_page')), (order.ref, None)]) }}
+
+  <section class="order-hero">
+    <span class="order-check" aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></span>
+    <div>
+      <h1>Thank you — your order is confirmed</h1>
+      <p>
+        Reference <strong>{{ order.ref }}</strong> · placed {{ order.created[:10] }} ·
+        paying by
+        {% if order.payment == 'cod' %}cash on delivery{% elif order.payment == 'transfer' %}bank transfer{% else %}card{% endif %}.
+      </p>
+    </div>
+  </section>
+
+  <ol class="steps steps-order" aria-label="Order progress">
+    <li class="step is-done"><span class="step-dot"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span> Order placed</li>
+    <li class="step is-active"><span class="step-dot">2</span> {{ order.status }}</li>
+    <li class="step"><span class="step-dot">3</span> Out for delivery</li>
+    <li class="step"><span class="step-dot">4</span> Delivered</li>
+  </ol>
+
+  <div class="order-layout">
+    <div class="order-main">
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-package"/></svg> Items ({{ order.item_count }})</h2>
+        <ul class="order-items">
+          {% for item in order.products %}
+            <li>
+              <img src="{{ shop_image_url(item.slug) }}" alt="" loading="lazy" width="72" height="72">
+              <div>
+                <a href="{{ url_for('shop.product_detail', slug=item.slug) }}">{{ item.title }}</a>
+                <span>Qty {{ item.qty }} · {{ item.price_display }} each</span>
+              </div>
+              <em>{{ (item.price * item.qty)|naira }}</em>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Delivering to</h2>
+        <address class="order-address">
+          <strong>{{ order.address.full_name }}</strong><br>
+          {{ order.address.address }}<br>
+          {{ order.address.city }}, {{ order.address.state }}<br>
+          {{ order.address.phone }}<br>
+          {{ order.address.email }}
+        </address>
+        {% if order.notes %}<p class="order-notes"><strong>Notes:</strong> {{ order.notes }}</p>{% endif %}
+        <p class="order-eta">
+          <svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg>
+          Estimated delivery <strong>{{ order.eta }}</strong>
+          ({{ 'express' if order.delivery == 'express' else 'standard' }})
+        </p>
+      </section>
+
+      <section class="card-panel card-panel-ai">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Need anything else?</h2>
+        <p>Ask Ama about delivery timing, returns, or what pairs with what you just bought.</p>
+        <div class="ai-prompts">
+          <button class="chip" type="button" data-assistant-open data-assistant-send="When will order {{ order.ref }} arrive?">Track this order</button>
+          <button class="chip" type="button" data-assistant-open data-assistant-send="What is your return policy?">Return policy</button>
+          <button class="chip" type="button" data-assistant-open data-assistant-send="What goes well with {{ order.products[0].title }}?">Matching accessories</button>
+        </div>
+      </section>
+    </div>
+
+    <aside class="summary">
+      <h2 class="summary-title">Payment summary</h2>
+      <dl class="summary-rows">
+        <div><dt>Subtotal</dt><dd>{{ order.subtotal|naira }}</dd></div>
+        {% if order.discount %}<div class="is-credit"><dt>Coupon {{ order.coupon }}</dt><dd>−{{ order.discount|naira }}</dd></div>{% endif %}
+        <div><dt>Delivery</dt><dd>{% if order.shipping == 0 %}Free{% else %}{{ order.shipping|naira }}{% endif %}</dd></div>
+      </dl>
+      <div class="summary-total">
+        <span>Total paid</span>
+        <strong>{{ order.total|naira }}</strong>
+      </div>
+      <p class="summary-note">
+        <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+        Demo order — no payment was processed. Reference {{ order.ref }} is your warranty proof.
+      </p>
+      <a class="btn btn-outline-primary btn-block" href="{{ url_for('shop.orders_page') }}">All my orders</a>
+      <a class="btn btn-ghost btn-block" href="{{ url_for('shop.home') }}">Continue shopping</a>
+    </aside>
+  </div>
+
+  {% if suggestions %}
+    <section class="block">
+      {{ m.section_head('Completes your order', 'Recommended from what you just bought.', icon='sparkles') }}
+      <div class="rail">{% for p in suggestions %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endblock %}

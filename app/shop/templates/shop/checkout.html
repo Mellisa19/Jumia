@@ -1,0 +1,133 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Checkout — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Cart', url_for('shop.cart_page')), ('Checkout', None)]) }}
+
+  <ol class="steps" aria-label="Checkout progress">
+    <li class="step is-done"><span class="step-dot"><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg></span> Cart</li>
+    <li class="step is-active"><span class="step-dot">2</span> Delivery &amp; payment</li>
+    <li class="step"><span class="step-dot">3</span> Confirmation</li>
+  </ol>
+
+  {% if errors %}
+    <div class="flash flash-error" role="alert">
+      <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+      <div>
+        <strong>Please fix {{ errors|length }} thing{{ '' if errors|length == 1 else 's' }}:</strong>
+        <ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+  {% endif %}
+
+  <form class="checkout" method="post" action="{{ url_for('shop.checkout') }}" novalidate
+        data-checkout
+        data-net="{{ cart.subtotal - cart.discount }}"
+        data-free-threshold="{{ shop_free_shipping_threshold }}"
+        data-ship-standard="{{ shop_standard_shipping }}"
+        data-ship-express="4500"
+        data-vat-rate="0.075">
+    <div class="checkout-main">
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Delivery details</h2>
+        <div class="field-grid">
+          {% for name, label in fields %}
+            <div class="field {% if name in ('address',) %}field-wide{% endif %}">
+              <label for="field-{{ name }}">{{ label }}</label>
+              <input id="field-{{ name }}" type="{% if name == 'email' %}email{% elif name == 'phone' %}tel{% else %}text{% endif %}"
+                     name="{{ name }}" value="{{ values.get(name, '') }}"
+                     {% if name == 'full_name' %}autocomplete="name"{% elif name == 'email' %}autocomplete="email"{% elif name == 'phone' %}autocomplete="tel"{% elif name == 'address' %}autocomplete="street-address"{% else %}autocomplete="address-level2"{% endif %}
+                     required>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg> Delivery method</h2>
+        <div class="option-list">
+          <label class="option">
+            <input type="radio" name="delivery" value="standard" {% if values.get('delivery') != 'express' %}checked{% endif %}>
+            <span class="option-body">
+              <strong>Standard — <span class="option-price">{% if cart.subtotal - cart.discount >= shop_free_shipping_threshold %}Free{% else %}{{ shop_standard_shipping|naira }}{% endif %}</span></strong>
+              <small>2-5 working days nationwide</small>
+            </span>
+          </label>
+          <label class="option">
+            <input type="radio" name="delivery" value="express" {% if values.get('delivery') == 'express' %}checked{% endif %}>
+            <span class="option-body">
+              <strong>Express — <span class="option-price">₦4,500</span></strong>
+              <small>Next working day in Lagos, Abuja and Port Harcourt</small>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-card"/></svg> Payment method</h2>
+        <div class="option-list">
+          <label class="option">
+            <input type="radio" name="payment" value="card" {% if values.get('payment', 'card') == 'card' %}checked{% endif %}>
+            <span class="option-body"><strong>Debit or credit card</strong><small>Visa, Mastercard, Verve</small></span>
+          </label>
+          <label class="option">
+            <input type="radio" name="payment" value="transfer" {% if values.get('payment') == 'transfer' %}checked{% endif %}>
+            <span class="option-body"><strong>Bank transfer</strong><small>Account details shown after you order</small></span>
+          </label>
+          <label class="option">
+            <input type="radio" name="payment" value="cod" {% if values.get('payment') == 'cod' %}checked{% endif %}>
+            <span class="option-body"><strong>Pay on delivery</strong><small>Cash or POS at your door</small></span>
+          </label>
+        </div>
+        <p class="panel-note">
+          <svg class="ico" aria-hidden="true"><use href="#i-info"/></svg>
+          This is a demonstration storefront. Submitting the form records the order and stops short of taking payment.
+        </p>
+      </section>
+
+      <section class="card-panel">
+        <h2 class="card-panel-title"><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg> Delivery notes (optional)</h2>
+        <label class="sr-only" for="notes">Delivery notes</label>
+        <textarea id="notes" name="notes" rows="3" maxlength="400"
+                  placeholder="Landmark, gate colour, best time to call…">{{ values.get('notes', '') }}</textarea>
+      </section>
+    </div>
+
+    <aside class="summary summary-sticky">
+      <h2 class="summary-title">Your order</h2>
+      <ul class="summary-items">
+        {% for line in cart.lines %}
+          <li>
+            <img src="{{ shop_image_url(line.product.slug) }}" alt="" loading="lazy" width="56" height="56">
+            <div>
+              <strong>{{ line.product.title }}</strong>
+              <span>Qty {{ line.qty }} · {{ line.product.price|naira }} each</span>
+            </div>
+            <em>{{ line.line_total|naira }}</em>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <dl class="summary-rows">
+        <div><dt>Subtotal</dt><dd>{{ cart.subtotal|naira }}</dd></div>
+        {% if cart.discount %}<div class="is-credit"><dt>Coupon {{ cart.coupon }}</dt><dd>−{{ cart.discount|naira }}</dd></div>{% endif %}
+        <div><dt>Delivery</dt><dd data-checkout-shipping>{% if cart.shipping == 0 %}Free{% else %}{{ cart.shipping|naira }}{% endif %}</dd></div>
+      </dl>
+
+      <div class="summary-total">
+        <span>Total</span>
+        <strong data-checkout-total>{{ cart.total|naira }}</strong>
+      </div>
+      <p class="summary-vat">Includes <span data-checkout-vat>{{ cart.vat_included|naira }}</span> VAT (7.5%)</p>
+
+      <button class="btn btn-primary btn-block btn-lg" type="submit">
+        <svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg> Place order
+      </button>
+      <a class="link-btn summary-back" href="{{ url_for('shop.cart_page') }}">
+        <svg class="ico" aria-hidden="true"><use href="#i-chevron-left"/></svg> Back to cart
+      </a>
+    </aside>
+  </form>
+{% endblock %}

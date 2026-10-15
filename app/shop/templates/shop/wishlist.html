@@ -1,0 +1,35 @@
+{% extends "shop/base.html" %}
+{% import "shop/_macros.html" as m %}
+
+{% block title %}Wishlist — Socratic Shop{% endblock %}
+
+{% block content %}
+  {{ m.breadcrumbs([('Wishlist', None)]) }}
+
+  <header class="page-head">
+    <div>
+      <h1>Your wishlist</h1>
+      <p>{% if items %}{{ items|length }} saved item{{ '' if items|length == 1 else 's' }}. Saved for this session only.{% else %}Nothing saved yet.{% endif %}</p>
+    </div>
+    <button class="btn btn-outline-primary btn-sm" type="button"
+            data-assistant-open data-assistant-send="Help me choose from my wishlist">
+      <svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg> Ask AI to compare these
+    </button>
+  </header>
+
+  {% if items %}
+    {{ m.product_grid(items, False) }}
+  {% else %}
+    {{ m.empty_state(
+        'Your wishlist is empty',
+        'Tap the heart on any product to keep it here while you compare.',
+        'Browse the catalogue', url_for('shop.home'), 'heart') }}
+  {% endif %}
+
+  {% if suggestions %}
+    <section class="block">
+      {{ m.section_head('Recommended for you', 'Built from your browsing history and the store trend.', icon='sparkles') }}
+      <div class="rail">{% for p in suggestions %}{{ m.product_card(p) }}{% endfor %}</div>
+    </section>
+  {% endif %}
+{% endblock %}

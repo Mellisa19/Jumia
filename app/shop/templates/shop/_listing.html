@@ -1,0 +1,43 @@
+{# Results layout: filter sidebar + toolbar + grid. Shared by category and search.
+   Params: action_url, page_data, facets, active, hidden_q (optional) #}
+{% import "shop/_macros.html" as m %}
+
+<div class="listing">
+  <aside class="listing-side" data-filter-panel>
+    {% include "shop/_filters.html" %}
+  </aside>
+
+  <div class="listing-main">
+    <div class="toolbar">
+      <button class="btn btn-ghost btn-sm filter-toggle" type="button" data-filter-toggle
+              aria-expanded="false" aria-controls="filter-panel">
+        <svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg> Filters
+      </button>
+      <p class="toolbar-count">
+        <strong>{{ page_data.total }}</strong> product{{ '' if page_data.total == 1 else 's' }}
+        {% if page_data.total %}<span class="toolbar-range">showing {{ page_data.first_index }}–{{ page_data.last_index }}</span>{% endif %}
+      </p>
+      <form class="toolbar-sort" method="get" action="{{ action_url }}">
+        {% for key, value in request.args.items() %}
+          {% if key not in ('sort', 'page') %}<input type="hidden" name="{{ key }}" value="{{ value }}">{% endif %}
+        {% endfor %}
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select" name="sort" data-autosubmit>
+          {% for value, label in shop_sort_options %}
+            <option value="{{ value }}" {% if active.sort == value %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+
+    {% if page_data.products %}
+      {{ m.product_grid(page_data.products) }}
+      {{ m.pagination(page_data) }}
+    {% else %}
+      {{ m.empty_state(
+          'No products matched',
+          'Try widening the price range, clearing a brand filter, or letting the AI assistant interpret what you typed.',
+          'Ask the AI assistant', url_for('shop.assistant_page'), 'sparkles') }}
+    {% endif %}
+  </div>
+</div>
