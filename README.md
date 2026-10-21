@@ -142,7 +142,7 @@ app/
     static/shop.css|shop.js    design system and behaviour
   routes/, services/, templates/   the original analytics dashboard (unchanged)
 tests/
-  test_shop.py                 98 tests: ML maths, parsing, cart, every route
+  test_shop.py                 100 tests: ML maths, parsing, cart, every route
 docs/screenshots/              images used in this README
 ```
 
@@ -167,7 +167,7 @@ migrations.
 
 ```bash
 pip install pytest
-python -m pytest tests/test_shop.py -q      # 98 passed
+python -m pytest tests/test_shop.py -q      # 100 passed
 ```
 
 The suite covers the TF-IDF and collaborative-filtering maths, budget and intent
