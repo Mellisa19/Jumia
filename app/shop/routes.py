@@ -359,6 +359,24 @@ def assistant_page():
     )
 
 
+@shop.route("/health")
+def health():
+    """Public liveness probe.
+
+    Deliberately unauthenticated and database-free, so a platform health check
+    (Railway, an uptime monitor, or me verifying a deploy) proves the app booted
+    and the catalogue loaded. A 200 here means the JSON dataset is readable.
+    """
+    return jsonify({
+        "status": "ok",
+        "service": "socratic-shop",
+        "products": len(catalog.products()),
+        "categories": len(catalog.categories_with_counts()),
+        "orders": len(catalog.orders()),
+        "assistant": "llm" if llm_enabled() else "rules",
+    })
+
+
 @shop.route("/orders")
 def orders_page():
     return render_template("shop/orders.html", orders=state.list_orders())

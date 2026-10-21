@@ -199,6 +199,14 @@ SHOP_LLM_API_KEY=...     enables model-written assistant prose
 DATABASE_URL=...         dashboard database (Railway Postgres)
 ```
 
+`GET /shop/health` is a public, database-free probe that returns the loaded catalogue
+counts. Use it as a platform health check, or to confirm a deploy actually booted:
+
+```json
+{"status": "ok", "service": "socratic-shop", "products": 72,
+ "categories": 12, "orders": 420, "assistant": "rules"}
+```
+
 ---
 
 ## Honest notes

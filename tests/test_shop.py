@@ -589,6 +589,14 @@ def test_dashboard_still_works(client):
     assert response.status_code in (200, 302)
 
 
+def test_health_endpoint_reports_a_loaded_catalogue(client):
+    payload = client.get("/shop/health").get_json()
+    assert payload["status"] == "ok"
+    assert payload["products"] == len(catalog.products())
+    assert payload["categories"] == 12
+    assert payload["assistant"] in ("rules", "llm")
+
+
 def test_login_page_links_to_the_storefront(client):
     """The deployed root is a login wall, so it must offer a route into the shop."""
     html = client.get("/login").get_data(as_text=True)
