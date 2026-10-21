@@ -3,5 +3,13 @@ builder = "NIXPACKS"
 
 [deploy]
 startCommand = "FLASK_APP=wsgi flask db upgrade && gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 2 --timeout 300"
+
+# Railway only routes traffic once this returns 200, so a deploy that boots but
+# cannot read the catalogue is marked unhealthy instead of serving errors.
+# /shop/health touches no database and needs no session, so it also covers the
+# case where migrations are still running.
+healthcheckPath = "/shop/health"
+healthcheckTimeout = 300
+
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
