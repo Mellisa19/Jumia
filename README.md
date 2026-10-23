@@ -187,16 +187,38 @@ from a fixed seed or a hash of the product slug, so re-running never churns the 
 
 ## Deployment
 
-The repository ships a `railway.toml` and a `Procfile` (`gunicorn wsgi:app`), so it
-deploys to Railway as-is. Because the storefront is a blueprint on the same Flask app,
-`/shop` is served by the same process as the dashboard.
+Because the storefront is a blueprint on the same Flask app, `/shop` is served by the
+same process as the dashboard. Both hosts below use `gunicorn wsgi:app`.
 
-Optional environment variables:
+### Render (one-click Blueprint)
+
+The repo ships a [`render.yaml`](render.yaml). In the [Render Dashboard](https://dashboard.render.com):
+**New → Blueprint → connect `Mellisa19/Jumia` → Deploy Blueprint**. Render provisions the
+web service, generates a `FLASK_KEY`, and redeploys on every push to `main`.
+
+Two things in that file are deliberate and worth knowing:
+
+* **One gunicorn worker, not two.** `create_app()` imports the analytics dashboard's route
+  modules, which pull in pandas, statsmodels and shapely at boot — measured at ~190-210 MB
+  RSS and ~16 s to import. Two workers would approach Render's 512 MB free-tier limit and
+  risk an OOM kill. Raise it via `WEB_CONCURRENCY` on a larger plan.
+* **`healthCheckPath: /shop/health`.** A deploy that boots but cannot read the JSON dataset
+  never receives traffic.
+
+Free instances spin down after inactivity, so the first request after a quiet period pays
+a cold start (the ~16 s boot above, slower on 0.1 CPU).
+
+### Railway
+
+`railway.toml` and `Procfile` deploy as-is: `New Project → Deploy from GitHub repo`. Railway
+reads the start command and health-check path from `railway.toml`.
+
+### Configuration
 
 ```
-FLASK_KEY=...            session signing key (set this in production)
+FLASK_KEY=...            session signing key (generate this in production)
 SHOP_LLM_API_KEY=...     enables model-written assistant prose
-DATABASE_URL=...         dashboard database (Railway Postgres)
+DATABASE_URL=...         dashboard database (Postgres); SQLite is used if unset
 ```
 
 `GET /shop/health` is a public, database-free probe that returns the loaded catalogue

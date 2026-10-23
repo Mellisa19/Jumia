@@ -1,0 +1,34 @@
+# Render Blueprint for Socratic Shop.
+#
+# In the Render Dashboard: New > Blueprint, connect Mellisa19/Jumia, and Render
+# provisions this service from the file. Every push to main redeploys.
+#
+# Python version: Render reads the repo's .python-version file (currently "3.12"),
+# which takes precedence over its default interpreter. No PYTHON_VERSION variable
+# is needed here — and if you do add one, it must be fully qualified (e.g. 3.12.11).
+services:
+  - type: web
+    name: socratic-shop
+    runtime: python
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pip install -r requirements.txt
+
+    # One worker on purpose. create_app() imports the analytics dashboard's
+    # route modules, which pull in pandas, statsmodels and shapely at boot:
+    # measured ~190-210 MB RSS and ~16s to import. Two gunicorn workers would
+    # approach the 512 MB free-tier limit and risk an OOM kill. Gunicorn still
+    # honours WEB_CONCURRENCY if you want to raise it on a larger plan.
+    startCommand: FLASK_APP=wsgi flask db upgrade && gunicorn wsgi:app --bind 0.0.0.0:$PORT --timeout 300
+
+    # Probes the catalogue without touching the database, so a deploy that
+    # boots but cannot read the JSON dataset never receives traffic.
+    healthCheckPath: /shop/health
+
+    autoDeployTrigger: commit
+    envVars:
+      # Signing key for session cookies (cart, wishlist, dashboard login).
+      # Render generates a random 256-bit value; never commit this.
+      - key: FLASK_KEY
+        generateValue: true
