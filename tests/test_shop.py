@@ -583,10 +583,19 @@ def test_checkout_redirects_when_the_cart_is_empty(client):
     assert response.headers["Location"].endswith("/shop/cart")
 
 
-def test_dashboard_still_works(client):
-    """The storefront must not have broken the existing analytics app."""
-    response = client.get("/")
-    assert response.status_code in (200, 302)
+def test_root_sends_anonymous_visitors_to_the_storefront(client):
+    """The app root must not drop a public visitor on the analytics login wall."""
+    response = client.get("/", follow_redirects=False)
+    assert response.status_code == 302
+    assert response.headers["Location"].endswith("/shop/")
+
+    landed = client.get("/", follow_redirects=True)
+    assert landed.status_code == 200
+    assert b"Socratic Shop" in landed.data
+
+
+def test_login_page_still_reachable_for_the_dashboard(client):
+    assert client.get("/login").status_code == 200
 
 
 def test_health_endpoint_reports_a_loaded_catalogue(client):

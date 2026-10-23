@@ -2,8 +2,8 @@
 import os
 
 import pandas as pd
-from flask import current_app, render_template
-from flask_login import login_required
+from flask import current_app, redirect, render_template, url_for
+from flask_login import current_user, login_required
 
 from app.services.get_data import load_orders
 from app.services.monthly_repurchases import get_monthly_repurchases_trend
@@ -14,8 +14,14 @@ from .common import refresh_all_orders_if_needed
 
 
 @main.route("/")
-@login_required
 def monthly_sales():
+    # On the public deployment, anonymous visitors should land on the storefront
+    # rather than a login wall. Signed-in users still get the dashboard, and the
+    # login page remains at /login. The analytics data source this page reads is
+    # a live WooCommerce endpoint, which is not reachable here.
+    if not current_user.is_authenticated:
+        return redirect(url_for("shop.home"))
+
     all_orders = current_app.config["ALL_ORDERS_CSV"]
 
     monthly_sales_trend = []
